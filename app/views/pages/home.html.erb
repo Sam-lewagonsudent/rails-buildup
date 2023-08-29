@@ -1,5 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "liste des actions disponible", actions_path %>
+<% if current_user.nil? %>
+<div class="container">
+  <div class="row justify-content-center">
+    <p class="welcome-text">
+    </p>
+    <%= image_tag "BuildUp.png" %>
+  </div>
+</div>
+
+
+<% else %>
+<div class="container">
+  <div class="row justify-content-center">
+    <h2>Salut, <%= current_user.user_name %>!</h2>
+    <%= link_to "liste des actions disponible", actions_path %>
 <%= link_to "liste de vos categories",  user_categories_path %>
-<%# <%= link_to "liste de vos challenges",  action_user_challenges_path %> %>
+<%= link_to "liste de vos challenges",  user_challenges_path %> %>
+  </div>
+</div>
+<%end%>
