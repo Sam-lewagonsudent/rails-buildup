@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :actions, only: [:index, :show] do
     resources :user_challenges
   end
-resources :user_categories
+  resources :user_categories
+  resources :categories, only: [:index, :show]
 end
