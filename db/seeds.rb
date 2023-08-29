@@ -12,19 +12,19 @@
 
 puts 'Seed Started'
 
-User.destroy_all
-puts 'USER Data Destroyed'
-Category.destroy_all
-puts 'CATEGORY Data Destroyed'
-Action.destroy_all
-puts 'ACTION Data Destroyed'
-UserCategory.destroy_all
-puts 'USERCATEGORY Data Destroyed'
 UserChallenge.destroy_all
 puts 'USERCHALLENGE Data Destroyed'
+UserCategory.destroy_all
+puts 'USERCATEGORY Data Destroyed'
+Action.destroy_all
+puts 'ACTION Data Destroyed'
+Category.destroy_all
+puts 'CATEGORY Data Destroyed'
+User.destroy_all
+puts 'USER Data Destroyed'
 
 puts 'Category started'
-tranport = Category.create!(title: "Transport")
+transport = Category.create!(title: "Transport")
 alimentation = Category.create!(title: "Alimentation")
 logement = Category.create!(title: "Logement")
 service_societaux = Category.create!(title: "Service Societaux")
@@ -52,7 +52,7 @@ antho = User.create!(email: "antho@example.com", password: "password", user_name
 puts 'User finished'
 
 puts 'User Category started'
-UserCategory.create!(user: jean, category: tranport)
+UserCategory.create!(user: jean, category: transport)
 UserCategory.create!(user: jean, category: service_societaux)
 UserCategory.create!(user: jean, category: divers)
 puts 'for jean'
@@ -73,11 +73,11 @@ UserChallenge.create!(done: true, completed_date: Date.today, user: jean, action
 puts 'for jean'
 UserChallenge.create!(done: false, user: samy, action: bike)
 UserChallenge.create!(done: true, completed_date: Date.today, user: samy, action: khaled)
-UserChallenge.create!(done: true, completed_date: Date.today, user: samy, action: action1)
+UserChallenge.create!(done: true, completed_date: Date.today, user: samy, action: banana)
 puts 'for samy'
 UserChallenge.create!(done: false, user: antho, action: bike)
 UserChallenge.create!(done: true, completed_date: Date.today, user: antho, action: season)
-UserChallenge.create!(done: true, completed_date: Date.today, user: antho, action: starfield)
+UserChallenge.create!(done: true, completed_date: Date.today, user: antho, action: vegetable)
 puts 'for antho'
 puts 'User Challenge finished'
 
