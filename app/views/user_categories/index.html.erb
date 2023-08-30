@@ -1,7 +1,7 @@
 <h1>UserCategories#index</h1>
 <p>Find me in app/views/user_categories/index.html.erb</p>
 
-<h1>Liste des catégories d'utilisateurs</h1>
+
 
 
 
@@ -11,4 +11,14 @@
   <div class="categories">alimentation</div>
 </div>
 
+
+
+
+<% @user_categories.each do |user_category|%>
+  <ul>
+  <li><%= user_category.category.title %>
+  
+ </li>
+  </ul>
+<%end%>
 <%= link_to "", actions_path() %>

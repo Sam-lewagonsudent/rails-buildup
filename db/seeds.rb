@@ -32,16 +32,16 @@ divers = Category.create!(title: "Divers")
 puts 'Category finished'
 
 puts 'ACTION started'
-piss = Action.create!(name: "Pisser sous la douche", span: "3 weeks", value: 10, category: divers)
-bike = Action.create!(name: "Faire du vélo", span: "1 day", value: 20, category: transport)
-vegetable = Action.create!(name: "Manger des légumes", span: "7 weeks", value: 30, category: alimentation)
+piss = Action.create!(name: "Pisser sous la douche", span: 3.weeks, value: 10, category: divers)
+bike = Action.create!(name: "Faire du vélo", span: 1.day, value: 20, category: transport)
+vegetable = Action.create!(name: "Manger des légumes", span: 2.weeks, value: 30, category: alimentation)
 puts 'vegetables 7 weeks'
-season = Action.create!(name: "Manger des truc de saisons", span: "2 months", value: 40, category: alimentation)
-khaled = Action.create!(name: "Another one", span: "13 months", value: 50, category: logement)
+season = Action.create!(name: "Manger des truc de saisons", span: 2.months, value: 40, category: alimentation)
+khaled = Action.create!(name: "Another one", span: 13.months, value: 50, category: logement)
 puts 'khaled 13 months'
-starfield = Action.create!(name: "Acheter le jeu le  Septembre", span: "2 years", value: 60, category: service_societaux)
+starfield = Action.create!(name: "Acheter le jeu le  Septembre", span: 2.years, value: 60, category: service_societaux)
 puts 'starfield 2 years'
-banana = Action.create!(name: "Peanut Butter Jeally Time", span: "9 days", value: 70, category: divers)
+banana = Action.create!(name: "Peanut Butter Jeally Time", span: 9.days, value: 70, category: divers)
 puts 'banana 9 days'
 puts 'ACTION finished'
 

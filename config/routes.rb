@@ -1,13 +1,24 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root to: "pages#home"
+
+  get '/redirection', to: 'pages#redirection', as: 'redirection'
+
   resources :actions, only: [:index, :show] do
-    resources :user_challenges
+    post 'add_to_challenges', on: :member
+    resources :user_challenges, only: [:create]
   end
+
+  resources :user_challenges, only: [:index, :show, :update] do
+    member do
+      patch 'toggle_complete'
+    end
+  end
+
   resources :user_categories
   resources :categories, only: [:index, :show]
 end
