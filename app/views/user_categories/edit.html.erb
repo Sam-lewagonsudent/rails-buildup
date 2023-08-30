@@ -1,2 +1,25 @@
 <h1>UserCategories#edit</h1>
 <p>Find me in app/views/user_categories/edit.html.erb</p>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <%= simple_form_for([@user_categories, @user], url: update_user_category_path, method: :patch) do |f| %>
+
+                <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+
+              <% @categories.each do |category| %>
+                <label>
+                  <%= check_box_tag 'user_category[category_ids][]', category.id, @user.categories.include?(category) %>
+                  <%= category.title %>
+                </label>
+                <br>
+              <% end %>
+          <%= f.submit 'Enregistrer' %>
+
+      <% end %>
+   </div>
+  </div>
+</div>

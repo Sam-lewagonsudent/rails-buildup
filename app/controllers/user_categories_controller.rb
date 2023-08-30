@@ -28,9 +28,22 @@ class UserCategoriesController < ApplicationController
   end
 
   def edit
+    @user = current_user
+    @categories = Category.all
+    @user_categories = UserCategory.where(user_id: current_user.id)
   end
 
   def update
+    @user_categories = UserCategory.where(user_id: current_user.id)
+      @user_categories.each do |user_category|
+        user_category.destroy
+      end
+    category_ids = params[:user_category][:category_ids]
+    category_ids.each do |category_id|
+      current_user.user_categories.create(category_id: category_id)
+    end
+
+    redirect_to root_path, notice: 'Categories were successfully associated.'
   end
 
   def destroy
@@ -43,4 +56,7 @@ class UserCategoriesController < ApplicationController
     params.require(:user_category).permit(:user_id, :category_id, category_ids: [])
   end
 
+  def clear
+
+  end
 end
