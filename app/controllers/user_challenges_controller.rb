@@ -16,7 +16,6 @@ class UserChallengesController < ApplicationController
   end
 
   def toggle_complete
-
     @user_challenge = UserChallenge.find(params[:id])
     @user_challenge.update(done: !@user_challenge.done)
     redirect_to user_challenge_path(@user_challenge), notice: 'Status updated successfully.'
