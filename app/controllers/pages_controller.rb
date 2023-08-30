@@ -6,4 +6,10 @@ class PagesController < ApplicationController
       @total_value = current_user.total_value_of_completed_actions
     end
   end
+
+
+  def profile
+    @completed_chal_historic = UserChallenge.where(user_id: current_user.id, done: true)
+  end
+
 end
