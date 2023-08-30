@@ -1,7 +1,9 @@
 class UserCategoriesController < ApplicationController
 
   def index
+
     @user_categories = UserCategory.where(user_id: current_user.id)
+
   end
 
   def show

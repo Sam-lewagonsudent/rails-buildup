@@ -2,6 +2,18 @@
 <p>Find me in app/views/user_categories/index.html.erb</p>
 
 
+
+
+
+
+<div class="container d-flex">
+  <div class="categories">transport</div>
+  <div class="categories">alimentation</div>
+</div>
+
+
+
+
 <% @user_categories.each do |user_category|%>
   <ul>
   <li><%= user_category.category.title %>
@@ -9,3 +21,4 @@
  </li>
   </ul>
 <%end%>
+<%= link_to "", actions_path() %>
