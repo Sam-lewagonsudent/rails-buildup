@@ -1,5 +1,6 @@
 class UserCategoriesController < ApplicationController
   def index
+   
   end
 
   def show
