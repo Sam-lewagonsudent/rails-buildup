@@ -8,3 +8,5 @@
 <p>Category: <%= @action.category.title %></p>
 <p>Span: <%= @action.span.to_i / 86_400 %> days</p>
 <p>Value: <%= @action.value %></p>
+
+<%= button_to "Add to My Challenges", add_to_challenges_action_path(@action), method: :post %>
