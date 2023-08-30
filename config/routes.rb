@@ -19,6 +19,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :user_categories
+  resources :user_categories, only: [:index, :show, :new, :create, :destroy]
+  get '/edit_user_category', to: 'user_categories#edit', as: 'edit_user_category'
+  patch '/user_category', to: 'user_categories#update', as: 'update_user_category'
   resources :categories, only: [:index, :show]
 end

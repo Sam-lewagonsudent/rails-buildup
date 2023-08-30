@@ -1,20 +1,24 @@
 <% if current_user.nil? %>
-<div class="container">
-  <div class="row justify-content-center">
-    <p class="welcome-text">
-    </p>
-    <%= image_tag "BuildUp.png" %>
+<div class="banner" >
+  <div class="container">
+        <div class="row justify-content-center">
+          <p class="welcome-text">
+          </p>
+          <%= image_tag "BuildUp2.png", class:"logo-large" %>
+        </div>
+
   </div>
 </div>
 
 
 <% else %>
-<div class="container">
-  <div class="row justify-content-center">
-    <h2>Salut, <%= current_user.user_name %>!</h2>
-    <%= link_to "liste des actions disponible", actions_path %>
-    <%= link_to "liste de vos categories",  user_categories_path %>
-    <%= link_to "liste de vos challenges",  user_challenges_path %>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <h2>Salut, <%= current_user.user_name %>!</h2>
+      <p>Total de vos points: <%= @total_value %></p>
+      
+    </div>
   </div>
-</div>
+<p>Total value of completed actions: <%= @total_value %></p>
 <%end%>
