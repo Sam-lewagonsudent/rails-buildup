@@ -55,8 +55,4 @@ class UserCategoriesController < ApplicationController
   def user_category_params
     params.require(:user_category).permit(:user_id, :category_id, category_ids: [])
   end
-
-  def clear
-
-  end
 end
