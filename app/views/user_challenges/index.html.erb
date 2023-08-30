@@ -1,3 +1,13 @@
 <h1>UserChallenges#index</h1>
 <p>Find me in app/views/user_challenges/index.html.erb</p>
-<%# <%= link_to "détail de votre challenge",   action_user_challenge_path %> %>
+
+<h1>Your Challenges</h1>
+
+<ul>
+  <% @user_challenges.each do |user_challenge| %>
+    <li>
+      <%= link_to user_challenge.action.name, user_challenge_path(user_challenge) %>:
+      Completed: <%= user_challenge.done %>
+    </li>
+  <% end %>
+</ul>
