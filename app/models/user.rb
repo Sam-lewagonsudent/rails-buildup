@@ -9,4 +9,8 @@ class User < ApplicationRecord
 
   validates :user_name, presence: true, uniqueness: true
   validates :region, presence: true
+
+  def total_value_of_completed_actions
+    user_challenges.joins(:action).where(done: true).sum('actions.value')
+  end
 end

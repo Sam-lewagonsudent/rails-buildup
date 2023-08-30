@@ -12,9 +12,16 @@ class ActionsController < ApplicationController
 
   def add_to_challenges
     @action = Action.find(params[:id])
-    current_user.user_challenges.create(action: @action, done: false)
-    redirect_to user_challenges_path, notice: 'Action was added to your challenges.'
+    user_challenge = current_user.user_challenges.new(action: @action, done: false)
+
+    if user_challenge.valid?
+      user_challenge.save
+      redirect_to user_challenges_path, notice: 'Action was added to your challenges.'
+    else
+      redirect_to action_path(@action), alert: user_challenge.errors.full_messages.join(", ")
+    end
   end
+
 
   private
 
