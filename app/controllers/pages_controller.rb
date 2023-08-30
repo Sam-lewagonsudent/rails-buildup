@@ -4,4 +4,7 @@ class PagesController < ApplicationController
   def home
   end
 
+  def profile
+    @completed_chal_historic = UserChallenge.where(user_id: current_user.id, done: true)
+  end
 end

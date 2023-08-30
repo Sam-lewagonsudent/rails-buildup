@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   }
 
   root to: "pages#home"
-
+  get  '/pages/profile', to: 'pages#profile', as: 'profile'
   get '/redirection', to: 'pages#redirection', as: 'redirection'
 
   resources :actions, only: [:index, :show] do
