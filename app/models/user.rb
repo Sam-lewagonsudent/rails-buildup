@@ -11,6 +11,17 @@ class User < ApplicationRecord
   validates :region, presence: true
 
   def total_value_of_completed_actions
-    user_challenges.joins(:action).where(done: true).sum('actions.value')
+    user_challenges.joins(:action)
+                      .where(done: true)
+                      .sum('actions.value')
+  end
+
+  def self.ranked_by_total_value
+    joins(user_challenges: :action)
+      .where(user_challenges: { done: true })
+      .group('users.id')
+      .select('users.*, SUM(actions.value) as total_value')
+      .order('total_value DESC')
+      .limit(10)
   end
 end
