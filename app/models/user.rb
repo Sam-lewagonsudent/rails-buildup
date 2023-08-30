@@ -6,7 +6,6 @@ class User < ApplicationRecord
   has_many  :user_categories, dependent: :destroy
   has_many  :categories, through: :user_categories
   has_many  :user_challenges, dependent: :destroy
-
   validates :user_name, presence: true, uniqueness: true
   validates :region, presence: true
 

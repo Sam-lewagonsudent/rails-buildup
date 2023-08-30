@@ -1,0 +1,14 @@
+<h1 class="text-center"> Historique des challenges </h1>
+
+<div class="container">
+    <% @completed_chal_historic.each do |user_challenge| %>
+
+  <div class="text-center">
+    <p>
+      Challenge: <%= user_challenge.done %>
+      Date: <%= user_challenge.created_at %>
+      action: <%= user_challenge.action.name %>
+    </p>
+  </div>
+</div>
+<% end %>
