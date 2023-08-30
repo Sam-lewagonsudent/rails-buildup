@@ -14,7 +14,6 @@
                 <label>
                   <%= check_box_tag 'user_category[category_ids][]', category.id, @user.categories.include?(category) %>
                   <%= category.title %>
-                  <%# <%raise%>
                 </label>
                 <br>
               <% end %>
