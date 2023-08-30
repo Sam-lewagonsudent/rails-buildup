@@ -19,8 +19,10 @@
           <i class="fa-solid fa-bars fa-2xl" style="color: #000000;"></i>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Actions", actions_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              <%= link_to "liste des actions disponible", actions_path, class: "dropdown-item" %>
+              <%= link_to "liste de vos categories",  user_categories_path, class: "dropdown-item" %>
+              <%= link_to "liste de vos challenges",  user_challenges_path, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
