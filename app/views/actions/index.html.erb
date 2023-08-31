@@ -31,13 +31,13 @@
     <div class="row">
       <% @actions.each do |action| %>
         <div class="col-6 cards-action-index">
-          <div class="custom-card-custom-action-card">
-            <div class="custom-card-title">
+          <div class="custom-card custom-action-card">
+            <div class="card-title">
               <%= action.name %>
             </div>
-            <div class="custom-card-icon">
+            <div class="card-icon">
               <a href="<%= action_path(action) %>">
-                <%= image_tag(action.icon, alt: 'Icon') %>
+                <%= image_tag("icons/#{action.icon}", alt: 'Icon') %>
               </a>
             </div>
           </div>
@@ -45,13 +45,9 @@
       <% end %>
     </div>
   </div>
-
 <% else %>
-  <p>Votre selection est vide.</p>
+  <p>No actions found for the selected categories.</p>
 <% end %>
-
-
-
 
 <%# <script>
   document.addEventListener("DOMContentLoaded", function() {
