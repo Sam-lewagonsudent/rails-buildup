@@ -9,8 +9,6 @@
   </div>
 </div>
 
-
-
 <% else %>
   <div class="container">
     <div class="row justify-content-center">
@@ -19,13 +17,20 @@
     </div>
   </div>
 
+  <div class="donut-progress-container">
+    <div class="donut-progress">
+      <div class="donut-bg"></div>
+      <div class="donut-fill" style="transform: rotate(<%= (@remaining_progress || 0) * 6 %>deg);"></div>
+      <span class="progress-level"><%= @user_level %></span>
+    </div>
+  </div>
 
 <div class="container">
   <div class="row mt-5">
     <div class="col-md-4">
       <div class="col-md-12 mb-1">
         <div class="card custom-card align-items-start"> <!-- Ajoute align-items-start ici -->
-           <div class="card-body text-center d-flex justify-content-start">
+          <div class="card-body text-center d-flex justify-content-start">
             <h5 class="card-title">Users Ranked by Total Value of Completed Actions</h5>
             <div>
               <% @ranked_users.each_with_index do |user, index| %>
@@ -41,7 +46,7 @@
     <div class="col-md-4">
       <div class="col-md-12 mb-1">
         <div class="card custom-card align-items-start"> <!-- Ajoute align-items-start ici -->
-           <div class="card-body text-center d-flex justify-content-start">
+          <div class="card-body text-center d-flex justify-content-start">
             <h5 class="card-title">Categories Ranked by Total Value of Completed Actions</h5>
             <div>
               <% @ranked_categories.each_with_index do |category, index| %>
@@ -57,7 +62,7 @@
     <div class="col-md-4">
       <div class="col-md-12 mb-1">
         <div class="card custom-card align-items-start"> <!-- Ajoute align-items-start ici -->
-           <div class="card-body text-center d-flex justify-content-start">
+          <div class="card-body text-center d-flex justify-content-start">
             <h5 class="card-title">Users Ranked by Total Value of Completed Actions per Category</h5>
             <div class="d-flex row mt-5">
               <% @categories.each do |category| %>
