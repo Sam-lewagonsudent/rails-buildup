@@ -11,9 +11,10 @@
         <style>
             .categ{ background-color:<%= Category::COLORS[color] %>;}
         </style>
-        <div style="--category_checkbox:<%= Category::COLORS[color] %>;"></div>
+        <div style="--category_checkbox:<%= Category::COLORS[color] %>;">
         <%= check_box_tag 'categories[]', category.id, @selected_category_ids.include?(category.id), class: "categ"  %>
         <%= label_tag "category_#{category.id}", category.title, id: "categ" %>
+        </div>
       </div>
     <% end %>
   </div>
@@ -25,13 +26,25 @@
 <% elsif @selected_categories.any? %>
   <h1>Challenges From Selected Categories</h1>
   <p>Selected Categories: <%= @selected_categories.map(&:title).join(', ') %></p>
-  <ul>
-    <% @actions.each do |action| %>
-      <li>
-        <%= link_to action.name, action_path(action) %> (Category: <%= action.category.title %>)
-      </li>
-    <% end %>
-  </ul>
+
+  <div class="custom-container">
+    <div class="row">
+      <% @actions.each do |action| %>
+        <div class="col-6 cards-action-index">
+          <div class="custom-card-custom-action-card">
+            <div class="custom-card-title">
+              <%= action.name %>
+            </div>
+            <div class="custom-card-icon">
+              <a href="<%= action_path(action) %>">
+                <%= image_tag(action.icon, alt: 'Icon') %>
+              </a>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 <% else %>
   <p>No actions found for the selected categories.</p>
 <% end %>
