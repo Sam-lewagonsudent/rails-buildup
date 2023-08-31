@@ -1,9 +1,20 @@
 class ActionsController < ApplicationController
-
   def index
     @user = current_user
-    @selected_categories = @user.categories
-    @actions = Action.where(category: @selected_categories)
+    @all_user_categories = @user.categories
+    @selected_category_ids = params[:categories] || []
+
+    if @selected_category_ids.empty?
+      @actions = []
+    else
+      @selected_categories = Category.where(id: @selected_category_ids)
+      @actions = Action.where(category: @selected_categories)
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show
