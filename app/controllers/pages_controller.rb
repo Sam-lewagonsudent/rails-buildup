@@ -9,7 +9,7 @@ class PagesController < ApplicationController
       @categories = Category.all
       @user = current_user
       @user_level = calculate_level(@total_value)
-
+       @user_challenges_not_completed = UserChallenge.where(user_id: current_user.id, done: false)
     end
   end
 
