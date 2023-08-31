@@ -1,23 +1,27 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <h1>Categories disponibles</h1>
+      <h1 class="categories justify-content">Categories disponibles</h1>
       <p>Choisissez dans quelles categories vous voulez vous investir </p>
 
         <%= simple_form_for([@user_category, @user], url: user_categories_path, method: :post) do |f| %>
 
           <%= f.error_notification %>
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-
-              <% @categories.each do |category| %>
-                <label>
-                  <%= check_box_tag 'user_category[category_ids][]', category.id, @user.categories.include?(category) %>
-                  <%= category.title %>
-                </label>
-                <br>
-              <% end %>
-          <%= f.submit 'Enregistrer' %>
+            <div class="container d-flex">
+                <div class="row">
+                  <% @categories.each do |category| %>
+                    <label>
+                      <div class="cards">
+                        <%= check_box_tag 'user_category[category_ids][]', category.id, @user.categories.include?(category) %>
+                        <%= category.title %>
+                      </div>
+                    </label>
+                    <br>
+                  <% end %>
+                  <%= f.submit 'Enregistrer' %>
+                </div>
+            </div>
         <% end %>
     </div>
   </div>
