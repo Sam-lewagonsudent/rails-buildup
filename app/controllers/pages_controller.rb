@@ -18,4 +18,9 @@ class PagesController < ApplicationController
     @user_categories = UserCategory.where(user_id: current_user.id)
   end
 
+  def  impact
+  end
+
+  def convertisseur
+  end
 end
