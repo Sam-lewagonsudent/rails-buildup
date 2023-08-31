@@ -32,13 +32,13 @@ divers = Category.create!(title: "Divers")
 puts 'Category finished'
 
 puts 'ACTION started'
-piss = Action.create!(name: "Pisser sous la douche", span: 3.weeks, value: 10, category: divers)
-bike = Action.create!(name: "Faire du vélo", span: 1.day, value: 20, category: transport)
-vegetable = Action.create!(name: "Manger des légumes", span: 2.weeks, value: 30, category: alimentation)
-season = Action.create!(name: "Manger des truc de saisons", span: 2.months, value: 40, category: alimentation)
-khaled = Action.create!(name: "Another one", span: 13.months, value: 50, category: logement)
-starfield = Action.create!(name: "Acheter le jeu le  Septembre", span: 2.years, value: 60, category: service_societaux)
-banana = Action.create!(name: "Peanut Butter Jeally Time", span: 9.days, value: 70, category: divers)
+piss = Action.create!(name: "Pisser sous la douche", span: 3.weeks, value: 10, category: divers, icon: 'icons8-dog-pee.svg')
+bike = Action.create!(name: "Faire du vélo", span: 1.day, value: 20, category: transport, icon: 'icons8-bike.svg')
+vegetable = Action.create!(name: "Manger des légumes", span: 2.weeks, value: 30, category: alimentation, icon: 'icons8-vegetables.svg')
+season = Action.create!(name: "Manger des truc de saisons", span: 2.months, value: 40, category: alimentation, icon: 'icons8-four-seasons.svg')
+khaled = Action.create!(name: "Another one", span: 13.months, value: 50, category: logement, icon: 'icons8-angry-man.svg')
+starfield = Action.create!(name: "Acheter le jeu le  Septembre", span: 2.years, value: 60, category: service_societaux, icon: 'icons8-flying-saucer.svg')
+banana = Action.create!(name: "Peanut Butter Jeally Time", span: 9.days, value: 70, category: divers, icon: 'icons8-banana.svg')
 
 tri_dechets = Action.create!(name: "Trier ses déchets", span: 1.week, value: 15, category: service_societaux)
 stop_pub = Action.create!(name: "Coller un 'stop-pub' sur sa boîte aux lettres", span: 2.weeks, value: 25, category: divers)
