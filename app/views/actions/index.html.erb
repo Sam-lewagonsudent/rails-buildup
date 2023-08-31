@@ -5,15 +5,10 @@
 <%= form_tag(actions_path, method: :get, data: { controller: "hello"}) do %>
   <div class="d-flex">
     <% @all_user_categories.each do |category| %>
-      <div class="custom-checkbox">
-        <% color = category.id % Category::COLORS.length %>
-        <%= Category::COLORS[color] %>
-        <style>
-            .categ{ background-color:<%= Category::COLORS[color] %>;}
-        </style>
-        <div style="--category_checkbox:<%= Category::COLORS[color] %>;"></div>
-        <%= check_box_tag 'categories[]', category.id, @selected_category_ids.include?(category.id), class: "categ"  %>
-        <%= label_tag "category_#{category.id}", category.title, id: "categ" %>
+      <% color = category.id % Category::COLORS.length %>
+      <div class="custom-checkbox" style="--category_checkbox:<%= Category::COLORS[color] %>;">
+        <%= label_tag "category_#{category.id}", category.title, class: "category_checkbox" %>
+        <%= check_box_tag 'categories[]', category.id, @selected_category_ids.include?(category.id), class: "categ-color"  %>
       </div>
     <% end %>
   </div>
@@ -37,50 +32,20 @@
 <% end %>
 
 
-
-
-<%# <script>
+ <script>
   document.addEventListener("DOMContentLoaded", function() {
     const checkboxes = document.querySelectorAll('.category_checkbox');
     checkboxes.forEach(checkbox => {
-      checkbox.addEventListener('change', function() {
-        const label = this.nextElementSibling;
-        if (this.checked) {
-          label.style.backgroundColor = categoryColor(this.id);
+      checkbox.addEventListener('click', function() {
+        const box = this.nextElementSibling;
+        if (box.checked) {
+          this.style.backgroundColor = "var(--category_checkbox)";
+          box.removeAttribute("checked");
         } else {
-          label.style.backgroundColor = "white";
+          this.style.backgroundColor = "initial";
+          box.setAttribute("checked", "");
         }
       });
     });
-
-    function categoryColor(categoryId) {
-      const colors = ['#FF5733', '#33FF57', '#5733FF', '#FF33D4', '#FFD133'];
-      // Assuming category IDs are like "category_1", "category_2", etc.
-      const idNumber = parseInt(categoryId.split('_')[1]);
-      const hashedValue = idNumber % colors.length;
-      return colors[hashedValue];
-    }
   });
-</script> %>
-  <%# <%= check_box_tag 'all', 'true', @selected_category_ids.size == @all_user_categories.size, id: 'all_checkbox' %>
-  <%# <%= label_tag 'all_checkbox', 'All' <br> %>
-  <%# <br> %>
-
-<%# <script>
-  document.getElementById("all_checkbox").addEventListener("change", function() {
-    var categoryCheckboxes = document.querySelectorAll(".category_checkbox");
-    if (this.checked) {
-      categoryCheckboxes.forEach(function(checkbox) {
-        checkbox.checked = false;
-      });
-    }
-  });
-
-  document.querySelectorAll(".category_checkbox").forEach(function(checkbox) {
-    checkbox.addEventListener("change", function() {
-      if (this.checked) {
-        document.getElementById("all_checkbox").checked = false;
-      }
-    });
-  });
-</script> %>
+</script>
