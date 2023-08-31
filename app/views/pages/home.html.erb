@@ -9,8 +9,6 @@
   </div>
 </div>
 
-
-
 <% else %>
   <div class="container">
     <div class="row justify-content-center">
@@ -23,6 +21,14 @@
             action: <%= user_challenge.action.name %>
           </p>
         <% end %>
+    </div>
+  </div>
+
+  <div class="donut-progress-container">
+    <div class="donut-progress">
+      <div class="donut-bg"></div>
+      <div class="donut-fill" style="transform: rotate(<%= (@remaining_progress || 0) * 6 %>deg);"></div>
+      <span class="progress-level"><%= @user_level %></span>
     </div>
   </div>
 
@@ -43,10 +49,12 @@
                   </p>
                 <% end %>
               </div>
+
             </div>
           </div>
         </div>
       </div>
+
       <div class="col-md-4">
         <div class="col-md-12 mb-1">
           <div class="card custom-card align-items-start">
@@ -59,10 +67,12 @@
                   </p>
                 <% end %>
               </div>
+
             </div>
           </div>
         </div>
       </div>
+
       <div class="col-md-4">
         <div class="col-md-12 mb-1">
           <div class="card custom-card align-items-start">
@@ -76,6 +86,7 @@
                       <%= index + 1 %>. <%= user.user_name %> - Total Value: <%= user.total_value %>
                     </p>
                   <% end %>
+
                 <% end %>
               </div>
             </div>
