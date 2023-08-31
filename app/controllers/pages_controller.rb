@@ -7,6 +7,7 @@ class PagesController < ApplicationController
       @ranked_users = User.ranked_by_total_value
       @ranked_categories = Category.ranked_by_total_value
       @categories = Category.all
+      @user_challenges_not_completed = UserChallenge.where(user_id: current_user.id, done: false)
     end
   end
 
