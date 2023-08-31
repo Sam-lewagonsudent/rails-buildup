@@ -11,14 +11,16 @@
 
                 <% @categories.each do |category| %>
                   <label>
-                    <div class="categories">
+                    <div class="categories  text-center">
                       <%= check_box_tag 'user_category[category_ids][]', category.id, @user.categories.include?(category) %>
                       <%= category.title %>
                     </div>
                   </label>
                   <br>
                 <% end %>
-                <%= f.submit 'Enregistrer' %>
+                  <div class="card categories text-center">
+                    <%= f.submit 'Enregistrer', class:"card categories" %>
+                  </div>
               </div>
             </div>
       <% end %>
