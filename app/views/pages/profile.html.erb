@@ -1,14 +1,57 @@
-<h1 class="text-center"> Historique des challenges </h1>
-
 <div class="container">
-    <% @completed_chal_historic.each do |user_challenge| %>
+  <div class="row mt-5">
+    <div class="col-md-4">
 
-  <div class="text-center">
-    <p>
-      Challenge: <%= user_challenge.done %>
-      Date: <%= user_challenge.created_at %>
-      action: <%= user_challenge.action.name %>
-    </p>
+        <div class="col-md-12 mb-4">
+          <div class="card custom-card">
+            <div class="card-body">
+              <h5 class="card-title">Statistiques 1</h5>
+              <p class="card-text">Nombre d'utilisateurs inscrits : 1000</p>
+            </div>
+          </div>
+        </div>
+
+    </div>
+    <div class="col-md-4 ">
+
+        <div class="col-md-12 mb-4">
+          <div class="card custom-card">
+            <div class="card-body">
+              <h5 class="card-title">Statistiques 2</h5>
+              <p class="card-text">Nombre de commandes passées : 500</p>
+            </div>
+          </div>
+        </div>
+
+    </div>
+    <div class="col-md-4">
+
+        <div class="col-md-12 mb-4">
+          <div class="card custom-card">
+            <div class="card-body">
+              <h5 class="card-title">Statistiques 3</h5>
+              <p class="card-text">Taux de conversion : 50%</p>
+            </div>
+          </div>
+        </div>
+
+    </div>
   </div>
 </div>
-<% end %>
+
+
+<p>
+  <h1 class="text-center"> Historique des challenges </h1>
+  </p>
+<div class="container mt-5">
+  <div class="d-flex justify-content-center">
+      <div>
+        <% @completed_chal_historic.each do |user_challenge| %>
+          <p>
+            Challenge: <%= user_challenge.done %>
+            Date: <%= user_challenge.created_at %>
+            action: <%= user_challenge.action.name %>
+          </p>
+        <% end %>
+      </div>
+  </div>

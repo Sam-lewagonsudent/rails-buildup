@@ -1,6 +1,4 @@
-<h1>UserCategories#edit</h1>
-<p>Find me in app/views/user_categories/edit.html.erb</p>
-
+<h1 class="categories justify-content">Ajuste tes categories </h1>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6">
@@ -8,17 +6,21 @@
 
                 <%= f.error_notification %>
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+            <div class="container d-flex">
+              <div class="row">
 
-
-              <% @categories.each do |category| %>
-                <label>
-                  <%= check_box_tag 'user_category[category_ids][]', category.id, @user.categories.include?(category) %>
-                  <%= category.title %>
-                </label>
-                <br>
-              <% end %>
-          <%= f.submit 'Enregistrer' %>
-
+                <% @categories.each do |category| %>
+                  <label>
+                    <div class="categories">
+                      <%= check_box_tag 'user_category[category_ids][]', category.id, @user.categories.include?(category) %>
+                      <%= category.title %>
+                    </div>
+                  </label>
+                  <br>
+                <% end %>
+                <%= f.submit 'Enregistrer' %>
+              </div>
+            </div>
       <% end %>
    </div>
   </div>

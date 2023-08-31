@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get  '/pages/profile', to: 'pages#profile', as: 'profile'
   get '/redirection', to: 'pages#redirection', as: 'redirection'
-
+  get '/bootstrap', to: 'pages#bootstrap', as: 'bootstrap'
   resources :actions, only: [:index, :show] do
     post 'add_to_challenges', on: :member
     resources :user_challenges, only: [:create]
