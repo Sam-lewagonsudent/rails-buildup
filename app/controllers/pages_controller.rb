@@ -21,6 +21,12 @@ class PagesController < ApplicationController
     @user_categories = UserCategory.where(user_id: current_user.id)
   end
 
+
+  def  impact
+  end
+
+  def convertisseur
+  end
   def calculate_total_value(user)
     completed_actions = user.user_challenges.where(done: true)
     total_value = completed_actions.sum(:value)
@@ -36,5 +42,6 @@ class PagesController < ApplicationController
     user_level = (total_value / 100) + 1
     remaining_progress = total_value % 100
     [user_level, remaining_progress]
-  end
+
+
 end
