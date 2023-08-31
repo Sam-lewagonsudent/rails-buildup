@@ -1,24 +1,18 @@
-<h1>UserCategories#index</h1>
-<p>Find me in app/views/user_categories/index.html.erb</p>
 
-
-
-
-
-
-<div class="container d-flex">
-  <div class="categories">transport</div>
-  <div class="categories">alimentation</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <h1 class="categories text-center">Mes categories selectionnées</h1>
+      <%# <div class="col-12 col-md-6"> %>
+          <% @user_categories.each do |user_category|%>
+        <div class="card text-center">
+            <div class="categories">
+              <%= user_category.category.title %>
+            </div>
+        </div>
+          <%end%>
+        </div>
+      <%# </div> %>
+        <div class="card categories">
+          <%= link_to "Ajuster mes categories", edit_user_category_path, class:"btn categories" %>
+  </div>
 </div>
-
-
-
-
-<% @user_categories.each do |user_category|%>
-  <ul>
-  <li><%= user_category.category.title %>
-  
- </li>
-  </ul>
-<%end%>
-<%= link_to "", actions_path() %>
