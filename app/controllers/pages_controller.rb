@@ -8,8 +8,9 @@ class PagesController < ApplicationController
       @ranked_categories = Category.ranked_by_total_value
       @categories = Category.all
       @user = current_user
-      @user_level = calculate_level(@total_value)
+      @user_level = current_level(@total_value)
       @user_challenges_not_completed = UserChallenge.where(user_id: current_user.id, done: false)
+      @user_progress = @total_value % 100
     end
   end
 
@@ -33,14 +34,12 @@ class PagesController < ApplicationController
     total_value
   end
 
-  def calculate_level(total_value)
-    user_level = total_value / 100
-    user_level
+  def current_level(total_value)
+    level = total_value / 100
+    level + 1
   end
 
-  def calculate_level_and_progress(total_value)
-    user_level = (total_value / 100) + 1
-    remaining_progress = total_value % 100
-    [user_level, remaining_progress]
+  def progress
+    total_value % 100
   end
 end
