@@ -1,0 +1,17 @@
+.achievements-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.achievement {
+  margin: 10px;
+  text-align: center;
+
+}
+
+.achievement-icon {
+  text-align: center;
+  display: inline-block;
+}

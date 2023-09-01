@@ -1,0 +1,17 @@
+<h1>Achievements#index</h1>
+<p>Find me in app/views/achievements/index.html.erb</p>
+  <%= link_to "Select Icon", new_reward_path %>
+<h1>Achievements</h1>
+<div class="achievements-list">
+  <% @actions.each do |action| %>
+    <div class="achievement">
+      <% if @user.achieved_action?(action) %>
+        <p><%= action.name %> achievement done</p>
+        <%= image_tag("achievements/#{action.icon}", alt: action.name) %>
+      <% else %>
+        <p><%= action.name %> achievement nil</p>
+        <%= image_tag("achievements/#{action.icon}", alt: action.name, class: "greyed-out") %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

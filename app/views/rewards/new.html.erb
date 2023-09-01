@@ -1,0 +1,15 @@
+<h1>Rewards#new</h1>
+<p>Find me in app/views/rewards/new.html.erb</p>
+
+<!-- app/views/icon_selection/new.html.erb -->
+
+<h1>Choose an Icon</h1>
+<% @completed_actions.each do |action| %>
+  <div class="icon-selection">
+    <%= image_tag("achievements/#{action.icon}", alt: action.name) %>
+    <%= form_for :reward, url: rewards_path do |f| %>
+      <%= f.hidden_field :selected_action_id, value: action.id %>
+      <%= f.submit "Select" %>
+    <% end %>
+  </div>
+<% end %>
