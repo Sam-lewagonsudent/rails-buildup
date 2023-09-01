@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  get 'rewards/new'
+  get 'rewards/create'
+  get 'achievements/index'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
 
   root to: "pages#home"
+  get '/achievements', to: 'achievements#index', as: 'achievements'
   get  '/pages/profile', to: 'pages#profile', as: 'profile'
   get '/redirection', to: 'pages#redirection', as: 'redirection'
   get '/bootstrap', to: 'pages#bootstrap', as: 'bootstrap'
@@ -14,6 +18,8 @@ Rails.application.routes.draw do
     post 'add_to_challenges', on: :member
     resources :user_challenges, only: [:create]
   end
+
+  resources :rewards, only: [:new, :create]
 
   resources :user_challenges, only: [:index, :show, :update] do
     member do
