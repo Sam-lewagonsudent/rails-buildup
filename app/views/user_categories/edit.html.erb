@@ -12,6 +12,7 @@
                 <% @categories.each do |category| %>
                   <label>
                     <div class="categories  text-center">
+                     <%# <%= f.input :category_ids, label: "", as: :check_boxes, collection: [[category.title, category.id]], checked: @user.categories.include?(category) %>
                       <%= check_box_tag 'user_category[category_ids][]', category.id, @user.categories.include?(category) %>
                       <%= category.title %>
                     </div>

@@ -6,48 +6,131 @@
           </p>
           <%= image_tag "BuildUp2.png", class:"logo-large" %>
         </div>
-
   </div>
 </div>
 
-
 <% else %>
-
   <div class="container">
     <div class="row justify-content-center">
       <h2>Salut, <%= current_user.user_name %>!</h2>
       <p>Total de vos points: <%= @total_value %></p>
-      
+        <p class="card-text d-flex">
+        <% @user_challenges_not_completed.each do |user_challenge| %>
+            Challenge: <%= user_challenge.done %>
+            Date: <%= user_challenge.created_at %>
+            action: <%= user_challenge.action.name %>
+          </p>
+        <% end %>
+    </div>
+  </div>
+
+  <div class="donut-progress-container">
+    <div class="donut-progress">
+      <div class="donut-bg"></div>
+      <div class="donut-fill" style="transform: rotate(<%= (@remaining_progress || 0) * 6 %>deg);"></div>
+      <span class="progress-level"><%= @user_level %></span>
     </div>
   </div>
 
 
-    <h1>Users Ranked by Total Value of Completed Actions</h1>
+
+
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <div class="col-md-12 mb-1">
+          <div class="card custom-card align-items-start">
+            <div class="card-body text-center d-flex justify-content-start">
+              <h5 class="card-title">Users Ranked by Total Value of Completed Actions</h5>
+              <div>
+                <% @ranked_users.each_with_index do |user, index| %>
+                  <p>
+                    <%= index + 1 %>. <%= user.user_name %> - Total Value: <%= user.total_value %>
+                  </p>
+                <% end %>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="col-md-12 mb-1">
+          <div class="card custom-card align-items-start">
+            <div class="card-body text-center d-flex justify-content-start">
+              <h5 class="card-title">Categories Ranked by Total Value of Completed Actions</h5>
+              <div>
+                <% @ranked_categories.each_with_index do |category, index| %>
+                  <p>
+                    <%= index + 1 %>. <%= category.title %> - Total Value: <%= category.total_value %>
+                  </p>
+                <% end %>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="col-md-12 mb-1">
+          <div class="card custom-card align-items-start">
+            <div class="card-body text-center d-flex justify-content-start">
+              <h5 class="card-title">Users Ranked by Total Value of Completed Actions per Category</h5>
+              <div class="d-flex row mt-5">
+                <% @categories.each do |category| %>
+                    <h5><%= category.title %></h5>
+                    <% category.ranked_users_by_total_value.each_with_index do |user, index| %>
+                    <p class="text-truncate">
+                      <%= index + 1 %>. <%= user.user_name %> - Total Value: <%= user.total_value %>
+                    </p>
+                  <% end %>
+
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+    <%# <h1>Users Ranked by Total Value of Completed Actions</h1>
 
     <% @ranked_users.each_with_index do |user, index| %>
-      <p>
-        <%= index + 1 %>. <%= user.user_name %> - Total Value: <%= user.total_value %>
-      </p>
-    <% end %>
+      <%# <p> %>
+        <%# <%= index + 1. <%= user.user_name - Total Value: <%= user.total_value %>
+      <%# </p> %>
+    <%# <% end %>
 
-    <h1>Categories Ranked by Total Value of Completed Actions</h1>
+    <%# <h1>Categories Ranked by Total Value of Completed Actions</h1> %>
 
-    <% @ranked_categories.each_with_index do |category, index| %>
-      <p>
-        <%= index + 1 %>. <%= category.title %> - Total Value: <%= category.total_value %>
-      </p>
-    <% end %>
+    <%# <% @ranked_categories.each_with_index do |category, index| %>
+      <%# <p> %>
+        <%# <%= index + 1. <%= category.title - Total Value: <%= category.total_value %>
+      <%# </p> %>
+    <%# <% end %>
 
-    <h1>Users Ranked by Total Value of Completed Actions per Category</h1>
+    <%# <h1>Users Ranked by Total Value of Completed Actions per Category</h1> %>
 
-    <% @categories.each do |category| %>
-      <h2><%= category.title %></h2>
-      <% category.ranked_users_by_total_value.each_with_index do |user, index| %>
-        <p>
-          <%= index + 1 %>. <%= user.user_name %> - Total Value: <%= user.total_value %>
-        </p>
-      <% end %>
-    <% end %>
+    <%# <% @categories.each do |category| %>
+      <%# <h2><%= category.title</h2> %>
+      <%# <% category.ranked_users_by_total_value.each_with_index do |user, index| %>
+        <%# <p> %>
+          <%# <%= index + 1. <%= user.user_name - Total Value: <%= user.total_value %>
+        <%# </p> %>
+      <%# <% end %>
+    <%# <% end %>
 
-<%end%>
-
+<%# <%end%>

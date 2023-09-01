@@ -4,10 +4,32 @@
 <h1>Your Challenges</h1>
 
 <ul>
-  <% @user_challenges.each do |user_challenge| %>
-    <li>
-      <%= link_to user_challenge.action.name, user_challenge_path(user_challenge) %>:
-      Completed: <%= user_challenge.done %>
-    </li>
-  <% end %>
+
+
+
 </ul>
+<div class="custom-container">
+  <div class="row">
+    <% @user_challenges.each do |user_challenge| %>
+      <ul>
+        <li>
+          <div class="col-6 cards-action-index">
+            <div class="custom-card-custom-action-card">
+              <div class="custom-card-icon">
+                    <div class="custom-card-title">
+                      <%= link_to user_challenge.action.name, user_challenge_path(user_challenge) %>:
+                    </div>
+                    Completed: <%= user_challenge.done %>
+                    <div class="custom-card-icon">
+                      <a href="<%= user_challenge_path(user_challenge.action) %>">
+                        <%= image_tag(user_challenge.action.icon, alt: 'Icon') %>
+                      </a>
+                    </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+</div>

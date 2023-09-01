@@ -1,5 +1,5 @@
-<h1>Actions#index</h1>
-<p>Find me in app/views/actions/index.html.erb</p>
+<h1>Actions</h1>
+
 
 <h2>Filter By Categories:</h2>
 <%= form_tag(actions_path, method: :get, data: { controller: "hello" }, class: "category_form") do %>
@@ -12,8 +12,9 @@
       </div>
     <% end %>
   </div>
-  <%= submit_tag 'Filter' %>
+  <%= submit_tag 'Filtrer' %>
 <% end %>
+
 
 <turbo-frame id="categories">
   <!-- Content you want to update -->
@@ -23,6 +24,7 @@
 
 <%#
 <script>
+
   document.addEventListener("DOMContentLoaded", function() {
     const checkboxes = document.querySelectorAll('.category_checkbox');
 
