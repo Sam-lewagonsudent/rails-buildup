@@ -16,15 +16,15 @@
           <div class="col-6 cards-action-index">
             <div class="custom-card-custom-action-card">
               <div class="custom-card-icon">
-                    <div class="custom-card-title">
-                      <%= link_to user_challenge.action.name, user_challenge_path(user_challenge) %>:
-                    </div>
-                    Completed: <%= user_challenge.done %>
-                    <div class="custom-card-icon">
-                      <a href="<%= user_challenge_path(user_challenge.action) %>">
-                        <%= image_tag(user_challenge.action.icon, alt: 'Icon') %>
-                      </a>
-                    </div>
+                <div class="custom-card-title">
+                  <%= link_to user_challenge.action.name, user_challenge_path(user_challenge) %>:
+                </div>
+                Completed: <%= user_challenge.done %>
+                <div class="custom-card-icon">
+                  <a href="<%= user_challenge_path(user_challenge.action) %>">
+                    <%= image_tag("icons/#{user_challenge.action.icon}", alt: 'Icon') %>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
