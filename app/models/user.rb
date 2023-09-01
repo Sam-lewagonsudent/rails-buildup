@@ -23,4 +23,13 @@ class User < ApplicationRecord
       .order('total_value DESC')
       .limit(10)
   end
+
+  def current_level
+    level = total_value_of_completed_actions / 100
+    level + 1
+  end
+
+  def total_value_of_completed_actions
+    user_challenges.joins(:action).where(done: true).sum('actions.value')
+  end
 end
