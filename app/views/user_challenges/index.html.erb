@@ -10,26 +10,21 @@
 </ul>
 <div class="custom-container">
   <div class="row">
-    <% @user_challenges.each do |user_challenge| %>
-      <ul>
-        <li>
-          <div class="col-6 cards-action-index">
-            <div class="custom-card-custom-action-card">
-              <div class="custom-card-icon">
-                <div class="custom-card-title">
-                  <%= link_to user_challenge.action.name, user_challenge_path(user_challenge) %>:
-                </div>
-                Completed: <%= user_challenge.done %>
-                <div class="custom-card-icon">
-                  <a href="<%= user_challenge_path(user_challenge.action) %>">
-                    <%= image_tag("icons/#{user_challenge.action.icon}", alt: 'Icon') %>
-                  </a>
-                </div>
-              </div>
-            </div>
+    <% sorted_user_challenges = @user_challenges.sort_by { |uc| uc.done ? 1 : 0 } %>
+    <% sorted_user_challenges.each do |user_challenge| %>
+      <div class="col-6 cards-action-index">
+        <div class="custom-card-custom-action-card">
+          <div class="custom-card-title">
+            <%= link_to user_challenge.action.name, user_challenge_path(user_challenge) %>:
           </div>
-        </li>
-      </ul>
+          Completed: <%= user_challenge.done %>
+          <div class="custom-card-icon">
+            <a href="<%= user_challenge_path(user_challenge.action) %>">
+              <%= image_tag("icons/#{user_challenge.action.icon}", alt: 'Icon') %>
+            </a>
+          </div>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
