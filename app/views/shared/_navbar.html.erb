@@ -1,39 +1,39 @@
 
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon postion-fixed">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon postion-fixed" data-controller="audios">
   <div class="container-fluid">
     <%= link_to  root_path, class: "navbar-brand" do %>
       <%= image_tag "BuildUp.png" %>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-audios-target="elem" data-action='click->audios#playSound' data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active ">
+          <li class="nav-item active " data-audios-target="elem" data-action='click->audios#playSound'>
             <%= link_to "Profile", profile_path, class: "nav-link"%>
           </li>
-          <li class="nav-item active ">
+          <li class="nav-item active " data-audios-target="elem" data-action='click->audios#playSound'>
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
-          <li class="nav-item dropdown ">
+          <li class="nav-item dropdown " data-audios-target="elem" data-action='click->audios#playSound'>
           <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Menu</a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-              <%= link_to "liste des actions disponible", actions_path, class: "dropdown-item" %>
-              <%= link_to "liste de vos categories",  user_categories_path, class: "dropdown-item" %>
-              <%= link_to "liste de vos challenges",  user_challenges_path, class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete, audios_target: "elem", action: "click->audios#playSound"}, class: "dropdown-item" %>
+              <%= link_to "liste des actions disponible", actions_path, data: { audios_target: "elem", action: "click->audios#playSound" }, class: "dropdown-item" %>
+              <%= link_to "liste de vos categories",  user_categories_path, data: { audios_target: "elem", action: "click->audios#playSound" }, data: { audios_target: "elem", action: "click->audios#playSound" }, class: "dropdown-item" %>
+              <%= link_to "liste de vos challenges",  user_challenges_path, data: { audios_target: "elem", action: "click->audios#playSound" }, data: { audios_target: "elem", action: "click->audios#playSound" }, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
           <li class="nav-item inline">
-            <%= link_to 'Inscription', new_user_registration_path, class: "nav-link"%>
+            <%= link_to 'Inscription', new_user_registration_path, data: { audios_target: "elem", action: "click->audios#playSound" }, class: "nav-link"%>
           </li>
           <li class="nav-item inline">
-            <%= link_to 'Connexion', new_user_session_path,  class: "nav-link" %>
+            <%= link_to 'Connexion', new_user_session_path, data: { audios_target: "elem", action: "click->audios#playSound" },  class: "nav-link" %>
           </li>
         <% end %>
       </ul>
