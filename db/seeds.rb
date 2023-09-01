@@ -23,7 +23,7 @@ puts 'CATEGORY Data Destroyed'
 User.destroy_all
 puts 'USER Data Destroyed'
 
-puts 'Category started'
+puts 'Category started'#FF33D4
 transport = Category.create!(title: "Transport", category_color: "#FF5733")
 alimentation = Category.create!(title: "Alimentation", category_color: "#33FF57")
 logement = Category.create!(title: "Logement", category_color: "#5733FF")

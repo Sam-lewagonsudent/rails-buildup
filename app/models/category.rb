@@ -4,7 +4,7 @@ class Category < ApplicationRecord
   has_many :users, through: :user_categories
 
   validates :title, presence: true
-  COLORS = ['#FF5733', '#33FF57', '#5733FF', '#FF33D4', '#FFD133']
+  COLORS = ['#FF33D4', '#FFD133', '#FF5733', '#33FF57', '#5733FF']
 
   def self.ranked_by_total_value
     joins(actions: :user_challenges)
