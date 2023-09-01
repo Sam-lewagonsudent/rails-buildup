@@ -16,12 +16,11 @@
           </div>
           <div class="white-area">
            <% user_challenge.done %>
-
-          <div class="custom-card-icon">
-            <%= link_to user_challenge_path(user_challenge) do %>
-              <%= image_tag("icons/#{user_challenge.action.icon}", alt: 'Icon') %>
-            <% end %>
-          </div>
+            <div class="custom-card-icon">
+              <%= link_to user_challenge_path(user_challenge) do %>
+                <%= image_tag("icons/#{user_challenge.action.icon}", alt: 'Icon') %>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
