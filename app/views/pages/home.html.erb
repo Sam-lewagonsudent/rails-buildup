@@ -11,16 +11,16 @@
 
 <% else %>
   <div class="container">
-    <div class="row justify-content-center">
+    <div class="d-flex flex-column align-items-center">
       <h2>Salut, <%= current_user.user_name %>!</h2>
       <p>Total de vos points: <%= @total_value %></p>
-        <p class="card-text d-flex">
         <% @user_challenges_not_completed.each do |user_challenge| %>
-            Challenge: <%= user_challenge.done %>
-            Date: <%= user_challenge.created_at %>
-            action: <%= user_challenge.action.name %>
-          </p>
-        <% end %>
+        <div class="justify-content-center">
+                Challenge: <% user_challenge.done %>
+                Date: <%= user_challenge.created_at %>
+                action: <%= user_challenge.action.name %>
+            <% end %>
+        </div>
     </div>
   </div>
 

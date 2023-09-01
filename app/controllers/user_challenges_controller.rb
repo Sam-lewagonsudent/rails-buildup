@@ -10,6 +10,7 @@ class UserChallengesController < ApplicationController
   end
 
   def update
+
   end
 
   def create
@@ -17,7 +18,7 @@ class UserChallengesController < ApplicationController
 
   def toggle_complete
     @user_challenge = UserChallenge.find(params[:id])
-    @user_challenge.update(done: !@user_challenge.done)
+    @user_challenge.update(done: !@user_challenge.done, completed_date: Date.parse(Date.new))
     redirect_to user_challenge_path(@user_challenge), notice: 'Status updated successfully.'
   end
 
