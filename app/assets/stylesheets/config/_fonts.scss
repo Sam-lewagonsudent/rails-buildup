@@ -1,10 +1,12 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Titillium+Web&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Comfortaa:wght@700&display=swap');
 // Define fonts for body and headers
-$body-font: 'Borel', 'Indie Flower', "sans-serif";
-$headers-font:'Borel', 'Indie Flower', "sans-serif";
-$categories: 'Borel', 'Indie Flower', "sans-serif";
+$body-font: 'Comfortaa', 'cursive';
+$headers-font:'Comfortaa', 'cursive';
+$categories: 'Comfortaa', 'cursive';
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";
