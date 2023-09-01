@@ -26,6 +26,7 @@ class PagesController < ApplicationController
   end
 
   def convertisseur
+    
   end
 
   def calculate_total_value(user)
