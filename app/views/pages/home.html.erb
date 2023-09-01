@@ -24,16 +24,10 @@
     </div>
   </div>
 
-  <div class="donut-progress-container">
-    <div class="donut-progress">
-      <div class="donut-bg"></div>
-      <div class="donut-fill" style="transform: rotate(<%= (@remaining_progress || 0) * 6 %>deg);"></div>
-      <span class="progress-level"><%= @user_level %></span>
-    </div>
-  </div>
-
-
-
+<div class="progress-bar">
+  <div class="progress" style="width: <%= @user_progress %>%;"></div>
+</div>
+<p>Level: <%= @user_level %></p>
 
   <div class="container">
     <div class="row mt-5">

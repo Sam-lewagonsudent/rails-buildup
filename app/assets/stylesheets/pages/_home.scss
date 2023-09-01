@@ -5,81 +5,16 @@
   height: 100;
 }
 
-// .progress-bar-container {
-//   text-align: center;
-// }
-
-// .progress-bar {
-//   position: relative;
-//   display: inline-block;
-//   border-radius: 50%;
-//   background-color: #ccc;
-// }
-
-// .progress-bar-circle {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   border-radius: 50%;
-//   background-color: #fff;
-//   width: 100%;
-//   height: 100%;
-// }
-
-// .level-text {
-//   font-size: 16px;
-//   font-weight: bold;
-// }
-
-// .progress-text {
-//   font-size: 14px;
-// }
-
-.donut-progress-container {
-  text-align: center;
-}
-
-.donut-progress {
-  position: relative;
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
+// laprogress bar
+.progress-bar {
+  width: 100%;
   background-color: #ccc;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.donut-bg,
-.donut-fill {
-  position: absolute;
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-}
-
-.donut-bg {
-  background-color: #ccc;
-}
-
-.donut-fill {
-  clip: rect(0, 65px, 65px, 32.5px); /* Clip half of the donut */
-  background-color: #4caf50;
-  transform-origin: center center;
-}
-
-.progress-level {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 18px;
-  font-weight: bold;
-  z-index: 1;
+.progress {
+  background-color: #33cc33; /* Green color */
+  height: 100%;
 }
