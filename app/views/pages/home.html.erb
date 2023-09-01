@@ -13,8 +13,10 @@
   <div class="container">
     <div class="d-flex flex-column align-items-center">
       <h2>Salut, <%= current_user.user_name %>!</h2>
-        <% if current_user.selected_icon.present? %>
-          <%= image_tag("achievements/#{current_user.selected_icon}", alt: "Selected Icon") %>
+        <% if current_user.selected_icons.present? %>
+          <% current_user.selected_icons.each do |icon| %>
+            <%= image_tag("achievements/#{icon}", alt: "Selected Icon") %>
+          <% end %>
         <% end %>
       <p>Total de vos points: <%= @total_value %></p>
         <% @user_challenges_not_completed.each do |user_challenge| %>

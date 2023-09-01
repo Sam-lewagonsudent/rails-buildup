@@ -9,6 +9,14 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
   get '/achievements', to: 'achievements#index', as: 'achievements'
+  patch 'update_icons', to: 'rewards#update_icons', as: :update_icons
+
+  resources :rewards, only: [] do
+    collection do
+      patch 'update_icons'
+    end
+  end
+
   get  '/pages/profile', to: 'pages#profile', as: 'profile'
   get '/redirection', to: 'pages#redirection', as: 'redirection'
   get '/bootstrap', to: 'pages#bootstrap', as: 'bootstrap'
