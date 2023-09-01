@@ -1,0 +1,17 @@
+<div id="categories">
+  <% if @selected_category_ids.empty? %>
+    <p>Please select categories to filter actions.</p>
+  <% elsif @selected_categories.any? %>
+    <h1>Challenges From Selected Categories</h1>
+    <p>Selected Categories: <%= @selected_categories.map(&:title).join(', ') %></p>
+    <ul>
+      <% @actions.each do |action| %>
+        <li>
+          <%= link_to action.name, action_path(action) %> (Category: <%= action.category.title %>)
+        </li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No actions found for the selected categories.</p>
+  <% end %>
+</div>

@@ -20,7 +20,7 @@
   padding: 5px 10px;
   border: 1px solid black;
   display: inline-block;
-  background-color: var(--category_checkbox);
+  background-color: white;
   position: relative;
   cursor: pointer;
   margin: 0 5px;
@@ -29,9 +29,4 @@
 
 .custom-checkbox input[type="checkbox"]:checked + label {
   border: 1px solid black;
-  background-color: azure;
-}
-
-.categ-color {
-  background-color: var(--category_checkbox);
 }

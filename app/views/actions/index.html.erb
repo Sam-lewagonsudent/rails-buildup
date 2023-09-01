@@ -2,50 +2,58 @@
 <p>Find me in app/views/actions/index.html.erb</p>
 
 <h2>Filter By Categories:</h2>
-<%= form_tag(actions_path, method: :get, data: { controller: "hello"}) do %>
+<%= form_tag(actions_path, method: :get, data: { controller: "hello" }, class: "category_form") do %>
   <div class="d-flex">
     <% @all_user_categories.each do |category| %>
       <% color = category.id % Category::COLORS.length %>
       <div class="custom-checkbox" style="--category_checkbox:<%= Category::COLORS[color] %>;">
         <%= label_tag "category_#{category.id}", category.title, class: "category_checkbox" %>
-        <%= check_box_tag 'categories[]', category.id, @selected_category_ids.include?(category.id), class: "categ-color"  %>
+        <%= check_box_tag 'categories[]', category.id, @selected_category_ids.include?(category.id) %>
       </div>
     <% end %>
   </div>
   <%= submit_tag 'Filter' %>
 <% end %>
 
-<% if @selected_category_ids.empty? %>
-  <p>Please select categories to filter actions.</p>
-<% elsif @selected_categories.any? %>
-  <h1>Challenges From Selected Categories</h1>
-  <p>Selected Categories: <%= @selected_categories.map(&:title).join(', ') %></p>
-  <ul>
-    <% @actions.each do |action| %>
-      <li>
-        <%= link_to action.name, action_path(action) %> (Category: <%= action.category.title %>)
-      </li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>No actions found for the selected categories.</p>
-<% end %>
+<turbo-frame id="categories">
+  <!-- Content you want to update -->
+  <%= render "categories" %>
+</turbo-frame>
 
 
- <script>
+<%#
+<script>
   document.addEventListener("DOMContentLoaded", function() {
     const checkboxes = document.querySelectorAll('.category_checkbox');
+
     checkboxes.forEach(checkbox => {
-      checkbox.addEventListener('click', function() {
-        const box = this.nextElementSibling;
-        if (box.checked) {
-          this.style.backgroundColor = "var(--category_checkbox)";
-          box.removeAttribute("checked");
-        } else {
-          this.style.backgroundColor = "initial";
-          box.setAttribute("checked", "");
+      const box = checkbox.nextElementSibling;
+
+      if (box) { // Vérifier si la checkbox existe avant d'ajouter les écouteurs
+        function updateCheckboxColor() {
+          if (box.checked) {
+            checkbox.style.backgroundColor = "var(--category_checkbox)";
+          } else {
+            checkbox.style.backgroundColor = "initial";
+          }
         }
-      });
+  console.log(box);
+        box.addEventListener('click', (event) => {
+          updateCheckboxColor();
+          event.currenTarget.checked = !event.currentTarget.checked;
+          console.log(event.currentTarget);
+        });
+
+        updateCheckboxColor();
+      }
     });
+
+    const filterButton = document.querySelector('.category_form input[type="submit"]');
+
+    if (filterButton) { // Vérifier si le bouton existe avant d'ajouter l'écouteur
+      filterButton.addEventListener('click', function() {
+        // Logique pour la soumission du formulaire ou AJAX si nécessaire
+      });
+    }
   });
-</script>
+</script> %>

@@ -1,6 +1,37 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
+
+  connect() {
+    const labelboxes = document.querySelectorAll('.category_checkbox');
+
+    labelboxes.forEach((label) => {
+      const box = label.nextElementSibling;
+      const updateCheckboxColor = (bx) => {
+        if (bx.checked) {
+          label.style.backgroundColor = "var(--category_checkbox)";
+        } else {
+          label.style.backgroundColor = "initial";
+        }
+      };
+
+      label.addEventListener('click', (event) => {
+        event.preventDefault();
+        box.checked = !box.checked;
+        updateCheckboxColor(box);
+      });
+
+      updateCheckboxColor(box);
+    });
+  }
+
+
+
+
+}
+
+
+
 //   search(event) {
 //     event.preventDefault(); // Prevent default form submission.
 
@@ -25,4 +56,3 @@ export default class extends Controller {
   //   this.element.requestSubmit()
   //   console.log('test');
   // }
-}
