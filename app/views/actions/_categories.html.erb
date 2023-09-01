@@ -9,13 +9,15 @@
         <% @actions.each do |action| %>
           <div class="col-6 cards-action-index">
             <div class="custom-card-custom-action-card">
-              <div class="custom-card-title">
-                  <%= link_to action.name, action_path(action) %> (Category: <%= action.category.title %>)
+              <div class="custom-card-title" style="background-color: <%= action.category.category_color %>">
+                <%= link_to action.name, action_path(action) %> (Category: <%= action.category.title %>)
               </div>
-              <div class="custom-card-icon">
-                <a href="<%= action_path(action) %>">
-                  <%= image_tag("icons/#{action.icon}", alt: 'Icon') %>
-                </a>
+              <div class="white-area">
+                <div class="custom-card-icon-center">
+                  <a href="<%= action_path(action) %>">
+                    <%= image_tag("icons/#{action.icon}", alt: 'Icon') %>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
