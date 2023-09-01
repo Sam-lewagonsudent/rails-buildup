@@ -4,7 +4,7 @@
     <h1 class="categories text-center">Mes categories selectionnées</h1>
       <%# <div class="col-12 col-md-6"> %>
           <% @user_categories.each do |user_category|%>
-        <div class="card text-center">
+        <div class="custom-card text-center">
             <div class="categories">
               <%= user_category.category.title %>
             </div>
@@ -12,7 +12,7 @@
           <%end%>
         </div>
       <%# </div> %>
-        <div class="card categories">
+        <div class="custom-card text-center">
           <%= link_to "Ajuster mes categories", edit_user_category_path, class:"btn categories" %>
         </div>
   </div>
