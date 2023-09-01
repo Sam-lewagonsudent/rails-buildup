@@ -8,12 +8,13 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: $body-font;
 }
 body {
   border-top: 150px;
   // background-color: rgb(238, 238, 238);
   // background-image: url('bckgrd.jpg');
-  color: rgb(11, 99, 47);
+  color: rgb(11, 3, 37);
   position:relative;
   min-height: 100%
 
