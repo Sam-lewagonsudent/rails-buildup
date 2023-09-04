@@ -5,13 +5,14 @@
 
 .custom-checkbox label {
   padding: 5px 10px;
-  border: 1px solid black;
+  border: 1px ;
   display: inline-block;
-  background-color: white;
+  background-color: rgba(100, 100, 100,0.3);
   position: relative;
   cursor: pointer;
   margin: 0 5px;
   transition: background-color 0.3s ease;
+  border-radius: 10px;
 }
 
 .custom-checkbox input[type="checkbox"]:checked + label {

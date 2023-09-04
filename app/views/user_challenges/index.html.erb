@@ -1,8 +1,10 @@
-<h1>UserChallenges#index</h1>
-<p>Find me in app/views/user_challenges/index.html.erb</p>
 
-<h1>Your Challenges</h1>
+<div class="banner">
+  <div class="container">
+    <h1><strong>Vos Challenges!</strong></h1>
 
+  </div>
+</div>
 <div class="custom-container">
   <div class="row">
     <% sorted_user_challenges = @user_challenges.sort_by { |uc| uc.done ? 1 : 0 } %>
@@ -10,7 +12,7 @@
       <div class="col-6 cards-action-index">
         <div class="custom-card-custom-action-card">
           <div class="custom-card-title" style="background-color: <%= user_challenge.action.category.category_color %>">
-            <%= link_to user_challenge_path(user_challenge) do %>
+            <%= link_to user_challenge_path(user_challenge), class:'link-to-text text-truncate' do %>
               <%= user_challenge.action.name %>
             <% end %>
           </div>
