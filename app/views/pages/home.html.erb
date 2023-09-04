@@ -13,22 +13,24 @@
 <% else %>
   <div class="container">
     <div class="d-flex flex-column align-items-center user-header">
-        <h2>Salut, <%= current_user.user_name %>!</h2>
-      
+      <div class="d-flex align-items-center">
+        <h2 class="mr-3">Salut, <%= current_user.user_name %>!</h2>
         <% if current_user.selected_icon.present? %>
           <div class="selected-icon">
-            <%= image_tag("achievements/#{current_user.selected_icon}", alt: "Selected Icon") %>
+            <%= image_tag("achievements/#{current_user.selected_icon}", alt: "Selected Icon", width: 50, height: 50, class: "img-fluid") %>
           </div>
         <% end %>
+      </div>
       <p>Total de vos points: <%= @total_value %></p>
-        <% @user_challenges_not_completed.each do |user_challenge| %>
+      <% @user_challenges_not_completed.each do |user_challenge| %>
         <div class="justify-content-center">
-                Challenge: <% user_challenge.done %>
-                Date: <%= user_challenge.created_at %>
-                action: <%= user_challenge.action.name %>
-            <% end %>
+          Challenge: <%= user_challenge.done %>
+          Date: <%= user_challenge.created_at %>
+          Action: <%= user_challenge.action.name %>
         </div>
+      <% end %>
     </div>
+  </div>
   </div>
 
 <div class="progress-bar">
