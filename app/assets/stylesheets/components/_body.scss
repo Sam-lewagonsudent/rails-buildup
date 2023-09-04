@@ -3,12 +3,13 @@ body,
 html {
     margin-top: 50px;
     padding: 0;
-    background: url('Pink-and-Blue-Sky.jpg') no-repeat center center fixed;
+    background: url('earth.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   font-family: $body-font;
+  color: white !important;
 }
 body {
   border-top: 150px;
