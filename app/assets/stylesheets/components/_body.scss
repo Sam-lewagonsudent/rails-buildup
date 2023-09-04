@@ -4,7 +4,7 @@ html
   {
     margin-top: 50px;
     padding: 0;
-    background: url('XZJ3.gif') no-repeat center center fixed;
+    background: url('XZJ6.gif') no-repeat center center fixed;
 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -43,4 +43,16 @@ body {
   min-height: 100%
 
 
+}
+.home-profile{
+  margin-top: 50px;
+  padding: 0;
+  background: url('XZJ3.gif') no-repeat center center fixed;
+
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+font-family: $body-font;
+color:white !important;
 }
