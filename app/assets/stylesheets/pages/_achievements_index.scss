@@ -15,3 +15,21 @@
   text-align: center;
   display: inline-block;
 }
+
+.greyed-out {
+  fill: #2eb84c;
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+}
+
+.user-header h2 {
+  margin-right: 10px;
+}
+
+.selected-icon {
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
+}
