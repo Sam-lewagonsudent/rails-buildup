@@ -43,31 +43,29 @@
   <div class="container">
     <div class="row mt-5">
       <div class="col-md-4">
-        <div class="col-md-12 mb-1">
-          <div class="card custom-card align-items-start">
-            <div class="card-body text-center d-flex justify-content-start">
-              <div class="accordion" id="accordionPanelsStayOpenExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                      Users Ranked by Total Value of Completed Actions
-                    </button>
-                  </h2>
-                  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                    <div class="accordion-body">
-                      <% @ranked_users.each_with_index do |user, index| %>
-                        <p>
-                          <%= index + 1 %>. <%= user.user_name %> - Total Value: <%= user.total_value %>
-                        </p>
-                      <% end %>
-                    </div>
-                  </div>
+        <div class="accordion custom-card align-items-start" id="accordionPanelsStayOpenExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                Users Ranked by Total Value of Completed Actions
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+              <div class="accordion-body">
+                <div class="card-body text-center d-flex justify-content-start">
+                  <% @ranked_users.each_with_index do |user, index| %>
+                    <p>
+                      <%= index + 1 %>. <%= user.user_name %> - Total Value: <%= user.total_value %>
+                    </p>
+                  <% end %>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+
 
       <div class="col-md-4">
         <div class="col-md-12 mb-1">
@@ -136,7 +134,7 @@
                     <div class="accordion-body">
                       <% @ranked_users.each_with_index do |user, index| %>
                         <%# <p>
-                          <%= index + 1 %><%#. <%= user.user_name %><%# - Total Value: <%= user.total_value %> 
+                          <%= index + 1 %><%#. <%= user.user_name %><%# - Total Value: <%= user.total_value %>
                         <%# </p>
                       <% end %>
                     <%# </div>
