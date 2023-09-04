@@ -6,6 +6,7 @@ class Category < ApplicationRecord
   validates :title, presence: true
   COLORS = ["#7498CE", "#7CCE74", "#CE7474",  "#CEC874", "#9B74CE" ]
 
+
   def self.ranked_by_total_value
     joins(actions: :user_challenges)
       .where(user_challenges: { done: true })
