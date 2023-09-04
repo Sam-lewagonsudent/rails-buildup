@@ -37,4 +37,8 @@ class User < ApplicationRecord
     completed_actions = user_challenges.where(action: action, done: true).count
     completed_actions >= 5
   end
+
+  def selected_icon
+    
+  end
 end
