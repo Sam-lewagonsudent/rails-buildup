@@ -1,9 +1,10 @@
-# config/meta.yml meta_product_name: "Product Name" meta_title: "Product name - Product tagline" meta_description: "Relevant description" meta_image: "cover.png"
+# config/meta.yml
+
 # should exist in `app/assets/images/` twitter_account: "@product_twitter_account"
 # required for Twitter Cards
 
 meta_product_name: "BuildUp"
 meta_title: "BuildUp pour tous les bons sacripants"
 meta_description: "Let's move forward"
-meta_image: "Images/BuildUp.png"
+meta_image: "buildup.png"
 twitter_account: "@SamyB23711680"
