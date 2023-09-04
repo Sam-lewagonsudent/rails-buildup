@@ -24,11 +24,11 @@ User.destroy_all
 puts 'USER Data Destroyed'
 
 puts 'Category started'
-transport = Category.create!(title: "Transport", category_color: "#FF5733")
-alimentation = Category.create!(title: "Alimentation", category_color: "#33FF57")
-logement = Category.create!(title: "Logement", category_color: "#5733FF")
-service_societaux = Category.create!(title: "Service Societaux", category_color: "#FF33D4")
-divers = Category.create!(title: "Divers", category_color: "#FFD133")
+transport = Category.create!(title: "Transport", category_color: "#7498CE")
+alimentation = Category.create!(title: "Alimentation", category_color: "#7CCE74")
+logement = Category.create!(title: "Logement", category_color: "#CE7474")
+service_societaux = Category.create!(title: "Service Societaux", category_color: "#CEC874")
+divers = Category.create!(title: "Divers", category_color: "#9B74CE")
 puts 'Category finished'
 
 puts 'ACTION started'
