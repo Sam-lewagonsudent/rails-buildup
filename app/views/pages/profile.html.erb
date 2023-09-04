@@ -1,64 +1,65 @@
-<%= link_to "Achievements", achievements_path %>
+<div class="background-dash home-profile">
+  <%= link_to "Achievements", achievements_path %>
 
-<div class="container">
-  <div class="row mt-5">
-    <div class="col-md-4">
-        <div class="col-md-12 mb-4">
-          <div class="card custom-card">
-            <div class="card-body">
-              <h5 class="card-title">Categorie</h5>
-                <div>
-                    <% @completed_chal_historic.each do |user_challenge| %>
-                      <p class="card-text d-flex">
-                        Challenge: <%= user_challenge.done %>
-                        Date: <%= user_challenge.created_at %>
-                        action: <%= user_challenge.action.name %>
-                      </p>
-                    <% end %>
-                </div>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-4">
+          <div class="col-md-12 mb-4">
+            <div class="card custom-card">
+              <div class="card-body">
+                <h5 class="card-title">Categorie</h5>
+                  <div>
+                      <% @completed_chal_historic.each do |user_challenge| %>
+                        <p class="card-text d-flex">
+                          Challenge: <%= user_challenge.done %>
+                          Date: <%= user_challenge.created_at %>
+                          action: <%= user_challenge.action.name %>
+                        </p>
+                      <% end %>
+                  </div>
+              </div>
             </div>
           </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="col-md-12 mb-4">
-          <div class="card custom-card">
-            <div class="card-body">
-              <h5 class="card-title">Challenge du jour</h5>
-                <div>
-                    <% @completed_chal_historic.each do |user_challenge| %>
-                      <p class="card-text d-flex">
-                        Challenge: <%= user_challenge.done %>
-                        Date: <%= user_challenge.created_at %>
-                        action: <%= user_challenge.action.name %>
-                      </p>
-                    <% end %>
-                </div>
+      </div>
+      <div class="col-md-4">
+          <div class="col-md-12 mb-4">
+            <div class="card custom-card">
+              <div class="card-body">
+                <h5 class="card-title">Challenge du jour</h5>
+                  <div>
+                      <% @completed_chal_historic.each do |user_challenge| %>
+                        <p class="card-text d-flex">
+                          Challenge: <%= user_challenge.done %>
+                          Date: <%= user_challenge.created_at %>
+                          action: <%= user_challenge.action.name %>
+                        </p>
+                      <% end %>
+                  </div>
+              </div>
             </div>
           </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="col-md-12 mb-4">
-          <div class="card custom-card">
-            <div class="card-body">
-              <h5 class="card-title">Historique des challenges</h5>
-                <div>
-                    <% @completed_chal_historic.each do |user_challenge| %>
-                      <p class="card-text d-flex">
-                        Challenge: <%= user_challenge.done %>
-                        Date: <%= user_challenge.created_at %>
-                        action: <%= user_challenge.action.name %>
-                      </p>
-                    <% end %>
-                </div>
+      </div>
+      <div class="col-md-4">
+          <div class="col-md-12 mb-4">
+            <div class="card custom-card">
+              <div class="card-body">
+                <h5 class="card-title">Historique des challenges</h5>
+                  <div>
+                      <% @completed_chal_historic.each do |user_challenge| %>
+                        <p class="card-text d-flex">
+                          Challenge: <%= user_challenge.done %>
+                          Date: <%= user_challenge.created_at %>
+                          action: <%= user_challenge.action.name %>
+                        </p>
+                      <% end %>
+                  </div>
+              </div>
             </div>
           </div>
-        </div>
+      </div>
     </div>
   </div>
 </div>
-
 
 <%# <p>
   <h1 class="text-center"> Historique des challenges </h1>

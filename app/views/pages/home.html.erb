@@ -1,4 +1,4 @@
-<div class="background-dash">
+<div class="background-dash home-profile">
 <% if current_user.nil? %>
 <div class="banner" >
   <div class="container">
@@ -14,7 +14,7 @@
   <div class="container">
     <div class="d-flex flex-column align-items-center user-header">
         <h2>Salut, <%= current_user.user_name %>!</h2>
-      
+
         <% if current_user.selected_icon.present? %>
           <div class="selected-icon">
             <%= image_tag("achievements/#{current_user.selected_icon}", alt: "Selected Icon") %>
