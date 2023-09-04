@@ -10,7 +10,7 @@
         <%= image_tag("achievements/#{action.icon}", alt: action.name) %>
       <% else %>
         <p><%= action.name %> achievement nil</p>
-        <%= image_tag("achievements/#{action.icon}", alt: action.name, class: "greyed-out") %>
+        <%= image_tag("achievements/#{action.icon}", alt: action.name) %>
       <% end %>
     </div>
   <% end %>
