@@ -1,0 +1,19 @@
+/* Hide the default checkbox */
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox label {
+  padding: 5px 10px;
+  border: 1px solid black;
+  display: inline-block;
+  background-color: white;
+  position: relative;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label {
+  border: 1px solid black;
+}

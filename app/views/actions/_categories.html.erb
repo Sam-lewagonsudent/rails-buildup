@@ -9,7 +9,7 @@
         <% @actions.each do |action| %>
           <div class="col-6 cards-action-index">
             <div class="custom-card-custom-action-card">
-              <div class="custom-card-title" style="background-color: <%= action.category.category_color %>">
+              <div class="custom-card-title btn btn-primary" style="background-color: <%= action.category.category_color %>">
 
                 <%= link_to action_path(action) do %>
                   <%= action.name %>
