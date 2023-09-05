@@ -31,15 +31,54 @@
     <% end %>
   </div>
 
-  <h2>Completed Challenges</h2>
-  <ul class="completed-challenges-list">
-    <% current_category = nil %>
-    <% @user_challenges.select { |uc| uc.done }.each do |completed_challenge| %>
-      <% if completed_challenge.action.category.title != current_category %>
+<h2>Completed Challenges</h2>
+<ul class="completed-challenges-list">
+  <% completed_challenge_counts = Hash.new(0) %>
+  <% @user_challenges.select { |uc| uc.done }.each do |completed_challenge| %>
+    <% challenge_name = completed_challenge.action.name %>
+    <% completed_challenge_counts[challenge_name] += 1 %>
+  <% end %>
+  <% current_category = nil %>
+  <% @user_challenges.select { |uc| uc.done }.each do |completed_challenge| %>
+    <% challenge_name = completed_challenge.action.name %>
+    <% if completed_challenge.action.category.title != current_category %>
+      <% if completed_challenge_counts[challenge_name] > 0 %>
+        <% if current_category %>
+          </ul>
+        <% end %>
         <% current_category = completed_challenge.action.category.title %>
         <h3><%= current_category %></h3>
+        <ul>
       <% end %>
-      <li><%= completed_challenge.action.name %></li>
+      <% if completed_challenge_counts[challenge_name] > 0 %>
+        <li><%= "#{challenge_name} (Completed #{completed_challenge_counts[challenge_name]} times)" %></li>
+        <% completed_challenge_counts[challenge_name] = 0 %>
+      <% end %>
     <% end %>
-  </ul>
-</div>
+  <% end %>
+</ul>
+
+<%# <h2>Completed Challenges</h2>
+  <ul class="completed-challenges-list">
+    <% current_category = nil %>
+    <%# <% @user_challenges.select { |uc| uc.done }.each do |completed_challenge| %>
+      <%# <% if completed_challenge.action.category.title != current_category %>
+        <%# <% current_category = completed_challenge.action.category.title %>
+        <%# <h3><%= current_category</h3> %>
+      <%# <% end %>
+      <%# <li><%= completed_challenge.action.name %><%#</li> %>
+    <%# <% end %>
+  <%# </ul> %>
+<%# </div> %>
+
+<%# <h2>Completed Challenges</h2> %>
+  <%# <ul class="completed-challenges-list"> %>
+    <%# <% completed_challenge_counts = Hash.new(0) %>
+    <%# <% @user_challenges.select { |uc| uc.done }.each do |completed_challenge| %>
+      <%# <% completed_challenge_counts[completed_challenge.action.name] += 1 %>
+    <%# <% end %>
+    <%# <% completed_challenge_counts.each do |challenge_name, count| %>
+      <%# <li><%= "#{challenge_name} (Completed #{count} times)" %><%#</li> %>
+    <%# <% end %>
+  <%# </ul> %>
+<%# </div> %>
