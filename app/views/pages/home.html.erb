@@ -26,25 +26,26 @@
     <% sorted_user_challenges = @user_challenges.reject { |uc| uc.done }.sort_by { |uc| [uc.action.category.title, uc.action.name] } %>
     <% current_category = nil %>
     <% sorted_user_challenges.each do |user_challenge| %>
-       <div class="col-6 cards-action-index">
-
+      <div class="col-6 cards-action-index">
         <div class="custom-card-custom-action-card">
           <div class="custom-card-title" style="background-color: <%= user_challenge.action.category.category_color %>">
             <%= link_to user_challenge_path(user_challenge), class:'link-to-text text-truncate' do %>
               <%= user_challenge.action.name %>
             <% end %>
           </div>
-          <% unless user_challenge.done %>
-            <div class="custom-card-icon">
-              <%= link_to user_challenge_path(user_challenge) do %>
-                <%= image_tag("icons/#{user_challenge.action.icon}", alt: 'Icon') %>
-              <% end %>
-            </div>
-          <% end %>
+            <% unless user_challenge.done %>
+              <div class="custom-card-icon">
+                <%= link_to user_challenge_path(user_challenge) do %>
+                  <%= image_tag("icons/#{user_challenge.action.icon}", alt: 'Icon') %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>
- </div>
+  </div>
+
 
 
 
