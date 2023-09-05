@@ -8,8 +8,8 @@
 <%= form_tag(actions_path, method: :get, data: { controller: "hello" }, class: "category_form") do %>
   <div class="row d-flex justify-content-center">
     <% @all_user_categories.each do |category| %>
-      <% color = category.id % Category::COLORS.length %>
-      <div class="custom-checkbox" style="--category_checkbox:<%= Category::COLORS[color] %>;">
+      <% color = category.category_color %>
+      <div class="custom-checkbox" style="--category_checkbox:<%= category.category_color %>;">
         <%= label_tag "category_#{category.id}", category.title, class: "category_checkbox" %>
         <%= check_box_tag 'categories[]', category.id, @selected_category_ids.include?(category.id) %>
       </div>
@@ -21,6 +21,19 @@
   <!-- Content you want to update -->
   <%= render "categories" %>
 
+<%# <h2 class=" text-center">Categories disponibles</h2>
+<%= form_tag(actions_path, method: :get, data: { controller: "hello" }, class: "category_form") do %>
+  <%# <div class="row d-flex justify-content-center"> %>
+    <%# <% @all_user_categories.each do |category| %>
+      <%# <% color = category.id % Category::COLORS.length %>
+      <%# <div class="custom-checkbox" style="--category_checkbox:<%= Category::COLORS[color] %>
+        <%# <%= label_tag "category_#{category.id}", category.title, class: "category_checkbox" %>
+        <%# <%= check_box_tag 'categories[]', category.id, @selected_category_ids.include?(category.id) %>
+      <%# </div> %>
+    <%# <% end %>
+  <%# </div> %>
+  <%# <%= submit_tag 'Filtrer' %>
+<%# <% end %>
 
 <%#
 <script>
