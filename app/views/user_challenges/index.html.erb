@@ -32,31 +32,49 @@
   </div>
 
 <h2>Completed Challenges</h2>
-<ul class="completed-challenges-list">
+<div class="completed-challenges-list">
   <% completed_challenge_counts = Hash.new(0) %>
   <% @user_challenges.select { |uc| uc.done }.each do |completed_challenge| %>
     <% challenge_name = completed_challenge.action.name %>
     <% completed_challenge_counts[challenge_name] += 1 %>
   <% end %>
-  <% current_category = nil %>
-  <% @user_challenges.select { |uc| uc.done }.each do |completed_challenge| %>
-    <% challenge_name = completed_challenge.action.name %>
-    <% if completed_challenge.action.category.title != current_category %>
-      <% if completed_challenge_counts[challenge_name] > 0 %>
-        <% if current_category %>
-          </ul>
+
+  <div class="custom-card" id="accordionPanelsStayOpenExample1">
+    <% current_category = nil %>
+    <% @user_challenges.select { |uc| uc.done }.each do |completed_challenge| %>
+      <% challenge_name = completed_challenge.action.name %>
+      <% if completed_challenge.action.category.title != current_category %>
+        <% if completed_challenge_counts[challenge_name] > 0 %>
+          <% if current_category %>
+            </ul>
+          <% end %>
+          <% current_category = completed_challenge.action.category.title %>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne-<%= current_category %>">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne-<%= current_category %>" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne-<%= current_category %>">
+                <%= current_category %>
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne-<%= current_category %>" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne-<%= current_category %>" data-bs-parent="#accordionPanelsStayOpenExample1">
+              <div class="accordion-body">
+                <div class="card-body text-center d-flex justify-content-start">
+                  <ul>
+                    <% if completed_challenge_counts[challenge_name] > 0 %>
+                      <li><%= "#{challenge_name} (Completed #{completed_challenge_counts[challenge_name]} times)" %></li>
+                      <% completed_challenge_counts[challenge_name] = 0 %>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         <% end %>
-        <% current_category = completed_challenge.action.category.title %>
-        <h3><%= current_category %></h3>
-        <ul>
-      <% end %>
-      <% if completed_challenge_counts[challenge_name] > 0 %>
-        <li><%= "#{challenge_name} (Completed #{completed_challenge_counts[challenge_name]} times)" %></li>
-        <% completed_challenge_counts[challenge_name] = 0 %>
       <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </div>
+</div>
+
+
 
 <%# <h2>Completed Challenges</h2>
   <ul class="completed-challenges-list">
