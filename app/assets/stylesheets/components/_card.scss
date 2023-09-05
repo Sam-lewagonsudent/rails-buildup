@@ -7,7 +7,7 @@
   background-color: rgba(220, 220, 220, 0.2) !important;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7) !important;
   transition: transform 0.2s !important;
-  color:white !important;
+
 }
 
 .custom-card .card-body {
@@ -21,6 +21,7 @@
 .custom-card h5 {
   font-size: 1.5rem !important;
   margin-bottom: 1rem !important;
+
 }
 
 .custom-card p {
@@ -32,9 +33,9 @@
   width: auto !important;
   background-color: rgba(220, 220, 220, 0.2) !important;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7) !important;
-  color:white !important;
+
   font-size: 1.5rem !important;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1px 0 rgb(207, 207, 207), 0 1px rgb(207, 207, 207), 1px 0  rgb(207, 207, 207), 0 -1px rgb(207, 207, 207);
 }
 
 .accordion-item {
@@ -44,9 +45,9 @@
   height: auto !important;
   border-radius: 20px !important;
   background-color: rgba(220, 220, 220, 0.2) !important;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7) !important;
-  color:white !important;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  box-shadow: 0px 4px 8px rgba(241, 241, 241, 0.7) !important;
+
+  text-shadow: -1px 0 rgb(207, 207, 207), 0 1px rgb(207, 207, 207), 1px 0  rgb(207, 207, 207), 0 -1px rgb(207, 207, 207);
 }
 
 .accordion-item .accordion-body {
@@ -54,18 +55,18 @@
   flex-direction: column !important;
   justify-content: center !important;
   align-items: center !important;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1px 0 rgb(207, 207, 207), 0 1px rgb(207, 207, 207), 1px 0  rgb(207, 207, 207), 0 -1px rgb(207, 207, 207);
 }
 
 .accordion-item h2 {
   font-size: 1.5rem !important;
   margin-bottom: 1rem !important;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1px 0 rgb(207, 207, 207), 0 1px rgb(207, 207, 207), 1px 0  rgb(207, 207, 207), 0 -1px rgb(207, 207, 207);
 }
 
 .accordion-item p {
   font-size: 1.2rem !important;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-shadow: -1px 0 rgb(207, 207, 207), 0 1px rgb(207, 207, 207), 1px 0  rgb(207, 207, 207), 0 -1px rgb(207, 207, 207);
 }
 
 .accordion {

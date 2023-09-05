@@ -1,4 +1,4 @@
-<h1 class="categories justify-content">Ajuste tes categories </h1>
+<h1 class="fonts-title justify-content">Ajuste tes categories </h1>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6">
@@ -11,11 +11,11 @@
 
                 <% @categories.each do |category| %>
                   <label>
-                    <div class="categories  text-center">
+                    <div class="categories  text-center fonts-text">
                      <%# <%= f.input :category_ids, label: "", as: :check_boxes, collection: [[category.title, category.id]], checked: @user.categories.include?(category) %>
-        <% color = category.category_color %>
-        <div class="custom-checkbox" style="--category_checkbox:<%= category.category_color %>;">
-        <%= label_tag "category_#{category.id}", category.title, class: "category_checkbox" %>
+                      <% color = category.category_color %>
+                      <div class="custom-checkbox" style="--category_checkbox:<%= category.category_color %>;">
+                      <%= label_tag "category_#{category.id}", category.title, class: "category_checkbox" %>
                       <%= check_box_tag 'user_category[category_ids][]', category.id, @user.categories.include?(category) %>
                       <%# <%= category.title %>
           </div>
@@ -24,7 +24,7 @@
                   <br>
                 <% end %>
                   <div class="text-center ">
-                    <%= f.submit 'Enregistrer', class:'btn btn-outline-dark custom-btn'  %>
+                    <%= f.submit 'Enregistrer', class:'btn btn-outline-dark categories categories fonts-text'  %>
                   </div>
               </div>
             </div>

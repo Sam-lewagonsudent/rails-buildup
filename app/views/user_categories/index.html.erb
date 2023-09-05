@@ -5,14 +5,14 @@
       <%# <div class="col-12 col-md-6"> %>
           <% @user_categories.each do |user_category|%>
         <div class="custom-card text-center">
-            <div class="categories">
+            <div class="categories fonts-text">
               <%= user_category.category.title %>
             </div>
         </div>
           <%end%>
         </div>
       <%# </div> %>
-        <div class="custom-card text-center">
+        <div class="custom-card text-center fonts-text">
           <%= link_to "Ajuster mes categories", edit_user_category_path, class:"btn categories" %>
         </div>
   </div>
