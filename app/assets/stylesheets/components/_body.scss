@@ -11,7 +11,8 @@ body {
 
   margin-top: 50px;
   padding: 0;
-  background: url('treehouse.gif') no-repeat center center fixed;
+  background: rgba($color: #616161, $alpha: 1.0);
+  // background: url('treehouse.gif') no-repeat center center fixed;
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
