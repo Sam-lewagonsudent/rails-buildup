@@ -1,9 +1,9 @@
 <div id="categories">
   <% if @selected_category_ids.empty? %>
-    <p>Please select categories to filter actions.</p>
+    <p>Filtrer les actions par catégories</p>
   <% elsif @selected_categories.any? %>
-    <h1>Challenges From Selected Categories</h1>
-    <p>Selected Categories: <%= @selected_categories.map(&:title).join(', ') %></p>
+    <h1>Challenges choisis</h1>
+    <p>selection: <%= @selected_categories.map(&:title).join(', ') %></p>
     <div class="custom-container">
       <div class="row">
         <% @actions.each do |action| %>

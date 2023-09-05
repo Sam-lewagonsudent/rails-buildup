@@ -1,0 +1,21 @@
+.fonts-title{
+  color:rgb(0, 46, 0);
+  font-family: $headers-font;
+
+}
+
+.fonts-text{
+  color:rgb(0, 46, 0);
+  font-family: $body-font;
+}
+
+.custom-card-title {
+  // background-color: black;
+  color:rgb(0, 46, 0);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 10vh;
+}
