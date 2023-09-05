@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     if user_signed_in?
-      @user_challenges = current_user.user_challenges
+      @user_challenges = current_user.user_challenges.includes(:action)
       @total_value = current_user.total_value_of_completed_actions
       @ranked_users = User.ranked_by_total_value
       @ranked_categories = Category.ranked_by_total_value
@@ -17,6 +17,7 @@ class PagesController < ApplicationController
 
   def profile
     @completed_chal_historic = UserChallenge.where(user_id: current_user.id, done: true)
+    @user_categories = UserCategory.where(user_id: current_user.id)
   end
 
 

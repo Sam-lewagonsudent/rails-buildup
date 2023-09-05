@@ -1,65 +1,95 @@
-<div class="home-profile">
-  <%= link_to "Achievements", achievements_path, class:'btn btn-outline-dark custom-btn' %>
 
+<div class="banner">
   <div class="container">
-    <div class="row mt-5">
-      <div class="col-md-4">
-          <div class="col-md-12 mb-4">
-            <div class="card custom-card">
-              <div class="card-body">
-                <h5 class="card-title">Categorie</h5>
-                  <div>
-                      <% @completed_chal_historic.each do |user_challenge| %>
-                        <p class="card-text d-flex">
-                          Challenge: <%= user_challenge.done %>
-                          Date: <%= user_challenge.created_at %>
-                          action: <%= user_challenge.action.name %>
-                        </p>
-                      <% end %>
+  <h1> Bienvenu sur votre profil</h1>
+  </div>
+</div>
+<%= link_to "Achievements", achievements_path, class:'btn btn-outline-dark categories ' %>
+  <div class="col-md-4">
+    <div class="accordion custom-card align-items-start" id="accordionPanelsStayOpenprofil1">
+      <div class="accordion-item">
+            <h2 class="accordion-header fonts-title" id="panelsStayOpen-headingTwo-profil-1">
+            <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo-1" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo-1">
+                Mes categories selectionnées
+              </button>
+            </h2>
+                <div id="panelsStayOpen-collapseTwo-1" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo-1">
+                  <div class="accordion-body">
+                    <div class="card-body text-center d-flex justify-content-start">
+                          <% @user_categories.each do |user_category|%>
+                        <div class="custom-card text-center">
+                            <div class="categories fonts-text">
+                              <%= user_category.category.title %>
+                            </div>
+                        </div>
+                          <%end%>
+
+                        <div class="custom-card text-center fonts-text">
+                          <%= link_to "Ajuster mes categories", edit_user_category_path, class:"btn btn-custom categories " %>
+                        </div>
+                    </div>
                   </div>
-              </div>
-            </div>
-          </div>
-      </div>
-      <div class="col-md-4">
-          <div class="col-md-12 mb-4">
-            <div class="card custom-card">
-              <div class="card-body">
-                <h5 class="card-title">Challenge du jour</h5>
-                  <div>
-                      <% @completed_chal_historic.each do |user_challenge| %>
-                        <p class="card-text d-flex">
-                          Challenge: <%= user_challenge.done %>
-                          Date: <%= user_challenge.created_at %>
-                          action: <%= user_challenge.action.name %>
-                        </p>
-                      <% end %>
-                  </div>
-              </div>
-            </div>
-          </div>
-      </div>
-      <div class="col-md-4">
-          <div class="col-md-12 mb-4">
-            <div class="card custom-card">
-              <div class="card-body">
-                <h5 class="card-title">Historique des challenges</h5>
-                  <div>
-                      <% @completed_chal_historic.each do |user_challenge| %>
-                        <p class="card-text d-flex">
-                          Challenge: <%= user_challenge.done %>
-                          Date: <%= user_challenge.created_at %>
-                          action: <%= user_challenge.action.name %>
-                        </p>
-                      <% end %>
-                  </div>
-              </div>
-            </div>
-          </div>
+                </div>
       </div>
     </div>
   </div>
-</div>
+
+
+      <div class="col-md-4">
+        <div class="accordion custom-card align-items-start" id="accordionPanelsStayOpenprofil2">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne-profil-2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne-2" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne-2">
+              Categorie
+              </button>
+            </h2>
+
+
+                  <div id="panelsStayOpen-collapseOne-2" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne-2">
+                    <div class="accordion-body">
+                      <div class="card-body text-center d-flex justify-content-start">
+                        <% @completed_chal_historic.each do |user_challenge| %>
+                          <p class="card-text d-flex">
+                            Challenge: <%= user_challenge.done %>
+                            Date: <%= user_challenge.created_at %>
+                            action: <%= user_challenge.action.name %>
+                          </p>
+                        <% end %>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+      </div>
+
+
+      <div class="col-md-4">
+        <div class="accordion custom-card align-items-start" id="accordionPanelsStayOpenprofil3">
+          <div class="accordion-item">
+              <h2 class="accordion-header" id="panelsStayOpen-headingOne-profil-3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne-3" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne-3">
+                Challenge du jour
+                </button>
+              </h2>
+            <div id="panelsStayOpen-collapseOne-3" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne-3">
+              <div class="accordion-body">
+                <div class="card-body text-center d-flex justify-content-start">
+                        <% @completed_chal_historic.each do |user_challenge| %>
+                          <p class="card-text d-flex">
+                            Challenge: <%= user_challenge.done %>
+                            Date: <%= user_challenge.created_at %>
+                            action: <%= user_challenge.action.name %>
+                          </p>
+                        <% end %>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
 <%# <p>
   <h1 class="text-center"> Historique des challenges </h1>
