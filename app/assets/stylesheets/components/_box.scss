@@ -31,7 +31,9 @@
 .box-text {
   background-color: bisque;
   padding: 7px 10px 7px 10px;
-  --mask: radial-gradient(12px at 12px 12px,#0000 98%,#000) -12px -12px;
+
+  --mask: radial-gradient(10px at 10px 10px,#0000 98%,#000) -10px -10px;
+
   -webkit-mask: var(--mask);
           mask: var(--mask);
 }
