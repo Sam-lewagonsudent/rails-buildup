@@ -1,14 +1,11 @@
-<h1>Rewards#new</h1>
-<p>Find me in app/views/rewards/new.html.erb</p>
-
 <!-- app/views/icon_selection/new.html.erb -->
 
-<h1>Choose an Icon</h1>
-<div class="row">
+<h1>Choisi un Badge!</h1>
+<div class="row icon-pad">
   <% @actions.each do |action| %>
     <% if @user.achieved_action?(action) %>
       <div class="col-6">
-        <div class="icon-selection card bg-brown">
+        <div class="icon-selection ">
           <div class="card-body">
             <div class="box-reward">
               <div class="polygon-container">
@@ -18,7 +15,7 @@
             <%= form_for :reward, url: rewards_path do |f| %>
               <%= f.hidden_field :selected_action_id, value: action.id %>
             <div class="text-center">
-              <%= f.submit "Select", class: "btn btn-primary mt-3 ms-3" %>
+              <%= f.submit "Select", class: "btn btn-outline-dark categories back-white mt-1 mb-3 me-3" %>
             </div>
             <% end %>
           </div>

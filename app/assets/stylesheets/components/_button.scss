@@ -40,5 +40,13 @@
 }
 
 .btn-custom{
- background-color: rgba(0, 66, 0, 0.322);
+  background-color: rgba(0, 66, 0, 0.322);
+}
+
+.back-white{
+  background-color: white !important;
+}
+
+.back-white:hover {
+  background-color: black !important;
 }
