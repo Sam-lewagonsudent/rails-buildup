@@ -1,5 +1,5 @@
 .box-test {
-  background-color: bisque;
+  background-color: rgb(26, 26, 26);
   width: 165px;
   aspect-ratio: 1;
   clip-path: polygon(
@@ -29,7 +29,7 @@
 }
 
 .box-text {
-  background-color: bisque;
+  background-color: rgb(26, 26, 26);
   padding: 7px 10px 7px 10px;
 
   --mask: radial-gradient(10px at 10px 10px,#0000 98%,#000) -10px -10px;
@@ -50,7 +50,7 @@
 }
 
 .box-reward {
-  background-color: bisque;
+  background-color: rgb(26, 26, 26);
   width: 150px;
   aspect-ratio: 1;
   clip-path: polygon(

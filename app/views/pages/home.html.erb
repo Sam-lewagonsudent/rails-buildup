@@ -12,15 +12,22 @@
 
 
     <div class="container">
-      <div class="d-flex justify-content-center">
-        <h2 class="tittle">Salut, <%= current_user.user_name %>!</h2>
-      </div>
-      <div class="text-center">
-        <h2>Vos challenges en cours</h2>
+
+      <div class="d-flex flex-column align-items-center user-header">
+
+        <div class="d-flex align-items-center">
+          <h2 class="mr-3">Salut, <%= current_user.user_name %>!</h2>
+
+          <% if current_user.selected_icon.present? %>
+            <div class="selected-icon">
+              <%= image_tag("achievements/#{current_user.selected_icon}", alt: "Selected Icon", width: 50, height: 50, class: "img-fluid") %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
-
-
+    
+  <h2>Vos challenges en cours</h2>
 
   <div class="row">
     <% sorted_user_challenges = @user_challenges.reject { |uc| uc.done }.sort_by { |uc| [uc.action.category.title, uc.action.name] } %>
