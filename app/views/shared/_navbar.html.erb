@@ -9,25 +9,27 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto nav-link">
         <% if user_signed_in? %>
           <li class="nav-item active " data-audios-target="elem" data-action='click->audios#playSound'>
-            <%= link_to "Profil", profile_path, class: "nav-link fonts-text"%>
+            <%= link_to "Profil", profile_path, class: "nav-link fonts-nav"%>
           </li>
           <li class="nav-item active " data-audios-target="elem" data-action='click->audios#playSound'>
-            <%= link_to "Home", root_path, class: "nav-link fonts-text" %>
+            <%= link_to "Home", root_path, class: "nav-link fonts-nav" %>
           </li>
           <li class="nav-item active " data-audios-target="elem" data-action='click->audios#playSound'>
-            <%= link_to "liste des actions disponible", actions_path, class: "nav-link fonts-text" %>
+            <%= link_to "Liste des actions disponible", actions_path, class: "nav-link fonts-nav" %>
           </li>
           <li class="nav-item active " data-audios-target="elem" data-action='click->audios#playSound'>
-            <%= link_to "liste de vos challenges", user_challenges_path, class: "nav-link fonts-text" %>
+            <%= link_to "Liste de vos challenges", user_challenges_path, class: "nav-link fonts-nav" %>
           </li>
           <li class="nav-item active " data-audios-target="elem" data-action='click->audios#playSound'>
-            <%= link_to "Log out", destroy_user_session_path, class: "nav-link fonts-text" %>
+            <%= link_to "Log out",  destroy_user_session_path,data: {turbo_method: :delete}, class: "nav-link fonts-nav" %>
+
           </li>
-          <%# <li class="nav-item dropdown " data-audios-target="elem" data-action='click->audios#playSound'>
+
+           <%# <li class="nav-item dropdown " data-audios-target="elem" data-action='click->audios#playSound'>
           <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Menu</a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -35,8 +37,8 @@
               <%# <%= link_to "liste des actions disponible", actions_path, data: { audios_target: "elem", action: "click->audios#playSound" }, class: "dropdown-item" %>
               <%# <%= link_to "liste de vos categories",  user_categories_path, data: { audios_target: "elem", action: "click->audios#playSound" }, data: { audios_target: "elem", action: "click->audios#playSound" }, class: "dropdown-item" %>
               <%# <%= link_to "liste de vos challenges",  user_challenges_path, data: { audios_target: "elem", action: "click->audios#playSound" }, data: { audios_target: "elem", action: "click->audios#playSound" }, class: "dropdown-item" %>
-            </div>
-          </li>
+            <%# </div>
+          </li> %>
         <% else %>
           <li class="nav-item inline">
             <%= link_to 'Inscription', new_user_registration_path, data: { audios_target: "elem", action: "click->audios#playSound" }, class: "nav-link"%>
