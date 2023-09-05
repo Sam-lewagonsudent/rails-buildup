@@ -15,7 +15,7 @@
         <div id="collapse<%= category.id %>" class="accordion-collapse collapse" aria-labelledby="heading<%= category.id %>" data-bs-parent="#achievementsAccordion">
           <div class="accordion-body">
             <% category_actions.each do |action| %>
-              <div class="achievement d-flex flex-column align-items-center">
+              <div class="achievement pattern-ach d-flex flex-column align-items-center">
                 <% if @user.achieved_action?(action) %>
                   <div class="box-text d-flex justify-content-center align-items-center flex-grow-1">
                     <p class="text-center">
