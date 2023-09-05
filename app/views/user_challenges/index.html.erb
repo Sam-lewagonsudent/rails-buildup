@@ -43,13 +43,13 @@
 
   <div class="custom-card" id="accordionPanelsStayOpenExample1">
     <% completed_categories.each do |category| %>
-      <div class="accordion-item">
+      <div class="accordion-item1">
         <% category_display = category.gsub('_', ' ').titleize %> <!-- Convert back to display format -->
-        <h2 class="accordion-header" id="panelsStayOpen-headingOne-<%= category %>">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne-<%= category %>" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne-<%= category %>">
+        <h3 class="accordion-header" id="panelsStayOpen-headingOne-<%= category %>">
+          <button class="accordion-button1" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne-<%= category %>" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne-<%= category %>">
             <%= category_display %>
           </button>
-        </h2>
+        </h3>
         <div id="panelsStayOpen-collapseOne-<%= category %>" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne-<%= category %>" data-bs-parent="#accordionPanelsStayOpenExample1">
           <div class="accordion-body">
             <div class="card-body text-center d-flex justify-content-start">
