@@ -2,7 +2,6 @@
   margin-top: 10px !important;
   margin-bottom: 10px !important;
   width: auto !important;
-  // min-height: 420px;
   height: auto !important;
   border-radius: 20px !important;
   background-color: rgba(220, 220, 220, 0.2) !important;
@@ -11,17 +10,12 @@
   color:rgb(2, 2, 2) !important;
 }
 
-// .custom-card:hover {
-//   transform: scale(1.05);
-// }
-
 .custom-card .card-body {
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
   align-items: center !important;
   height: 100% !important;
-
 }
 
 .custom-card h5 {
@@ -47,7 +41,6 @@
   margin-top: 10px !important;
   margin-bottom: 10px !important;
   width: auto !important;
-  // min-height: 420px;
   height: auto !important;
   border-radius: 20px !important;
   background-color: rgba(220, 220, 220, 0.2) !important;
@@ -64,7 +57,7 @@
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.accordion-item h5 {
+.accordion-item h2 {
   font-size: 1.5rem !important;
   margin-bottom: 1rem !important;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
@@ -80,8 +73,34 @@
   --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 
+
 // .tittle {
 //   font-family: $main;
 //   font-weight: 400;
 //   background-color: aquamarine;
 // }
+
+.accordion-button {
+  width: 100% !important;
+}
+
+.accordion-item1 {
+  margin-top: 0px !important;
+  margin-bottom: 4px !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 20px !important;
+  background-color: rgba(220, 220, 220, 0.2) !important;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7) !important;
+  color:white !important;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.accordion-button1 {
+  width: 100% !important;
+  padding: 5px!important;
+  border-radius: 20px !important;
+  background-color: rgba(220, 220, 220, 0.2) !important;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7) !important;
+}
+

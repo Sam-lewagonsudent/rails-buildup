@@ -41,90 +41,77 @@
     </div>
 
 
-
-
-
-<div class="container">
-  <div class="row mt-5">
-    <div class="col-md-4">
-      <div class="accordion custom-card align-items-start" id="accordionPanelsStayOpenExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-              Users Ranked by Total Value of Completed Actions
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-            <div class="accordion-body">
-              <div class="card-body text-center d-flex justify-content-start">
-                <% @ranked_users.each_with_index do |user, index| %>
-                  <p>
-                    <%= index + 1 %>. <%= user.user_name %> - Total Value: <%= user.total_value %>
-                  </p>
-                <% end %>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <div class="accordion custom-card align-items-start" id="accordionPanelsStayOpenExample1">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne-1">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne-1" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne-1">
+                Users Ranked by Total Value of Completed Actions
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne-1" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne-1">
+              <div class="accordion-body">
+                <div class="card-body text-center d-flex justify-content-start">
+                  <% @ranked_users.each_with_index do |user, index| %>
+                    <p>
+                      <%= index + 1 %>. <%= user.user_name %> - Total Value: <%= user.total_value %>
+                    </p>
+                  <% end %>
+                </div>
 
               </div>
             </div>
           </div>
         </div>
-
       </div>
-    </div>
 
-    <div class="col-md-4">
-      <div class="col-md-12 mb-1">
-        <div class="accordion custom-card align-items-start" id="accordionPanelsStayOpenExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                  Categories Ranked by Total Value of Completed Actions
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                <div class="accordion-body">
-                  <div class="card-body text-center d-flex justify-content-start">
-                    <% @ranked_categories.each_with_index do |category, index| %>
+      <div class="col-md-4">
+        <div class="accordion custom-card align-items-start" id="accordionPanelsStayOpenExample2">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo-1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo-1" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo-1">
+                Categories Ranked by Total Value of Completed Actions
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo-1" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo-1">
+              <div class="accordion-body">
+                <div class="card-body text-center d-flex justify-content-start">
+                  <% @ranked_categories.each_with_index do |category, index| %>
                     <p>
                       <%= index + 1 %>. <%= category.title %> - Total Value: <%= category.total_value %>
                     </p>
                     <p>
-                    Total d'equivalent CO2 economisé: <%= category.total_value / 0.01 %> grCO2
+                      Total d'equivalent CO2 economisé: <%= category.total_value / 0.01 %> grCO2
                     </p>
-                    <% end %>
-                  </div>
-
+                  <% end %>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-
-
-    <div class="col-md-4">
-      <div class="col-md-12 mb-1">
-        <div class="accordion custom-card align-items-start" id="accordionPanelsStayOpenExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                  Users Ranked by Total Value of Completed Actions per Category
-                </button>
-              </h2>
-              <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-          <div class="card-body text-center d-flex justify-content-start">
-            <div class="accordion-body">
+      <div class="col-md-4">
+        <div class="accordion custom-card align-items-start" id="accordionPanelsStayOpenExample3">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree-1">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree-1" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree-1">
+                Users Ranked by Total Value of Completed Actions per Category
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree-1" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree-1">
+              <div class="accordion-body">
                 <div class="card-body text-center d-flex justify-content-start">
                   <% @categories.each do |category| %>
-                      <h5><%= category.title %></h5>
-                      <% category.ranked_users_by_total_value.each_with_index do |user, index| %>
+                    <h5><%= category.title %></h5>
+                    <% category.ranked_users_by_total_value.each_with_index do |user, index| %>
                       <p class="text-truncate">
                         <%= index + 1 %>. <%= user.user_name %> - Total Value: <%= user.total_value %>
                       </p>
                     <% end %>
                   <% end %>
-
                 </div>
               </div>
             </div>
@@ -132,5 +119,7 @@
         </div>
       </div>
     </div>
+  </div>
+
   <% end %>
 </div>
