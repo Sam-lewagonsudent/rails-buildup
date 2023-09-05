@@ -1,16 +1,33 @@
 <h1>Achievements#index</h1>
 <p>Find me in app/views/achievements/index.html.erb</p>
   <%= link_to "Select Icon", new_reward_path %>
+
 <h1>Achievements</h1>
 <div class="achievements-list">
   <% @actions.each do |action| %>
-    <div class="achievement">
+    <div class="achievement d-flex flex-column align-items-center">
       <% if @user.achieved_action?(action) %>
-        <p><%= action.name %> achievement done</p>
-        <%= image_tag("achievements/#{action.icon}", alt: action.name) %>
+        <div class="box-text d-flex justify-content-center align-items-center flex-grow-1">
+          <p class="text-center">
+            <%= action.name %> achievement done
+          </p>
+        </div>
+        <div class="box-test">
+          <div class="polygon-container">
+            <%= image_tag("achievements/#{action.icon}", alt: action.name, class: "svg-icon") %>
+          </div>
+        </div>
       <% else %>
-        <p><%= action.name %> achievement nil</p>
-        <%= image_tag("icons_grey/#{action.icon}", alt: action.name) %>
+        <div class="box-text d-flex justify-content-center align-items-center flex-grow-1">
+          <p class="text-center">
+            <%= action.name %> achievement nil
+          </p>
+        </div>
+        <div class="box-test">
+          <div class="polygon-container">
+            <%= image_tag("icons_grey/#{action.icon}", alt: action.name, class: "svg-icon") %>
+          </div>
+        </div>
       <% end %>
     </div>
   <% end %>
