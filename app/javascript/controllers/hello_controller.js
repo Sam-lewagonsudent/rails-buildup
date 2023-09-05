@@ -11,7 +11,7 @@ export default class extends Controller {
         if (bx.checked) {
           label.style.backgroundColor = "var(--category_checkbox)";
         } else {
-          label.style.backgroundColor = "initial";
+          label.style.backgroundColor = "white";
         }
       };
 
