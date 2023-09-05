@@ -2,7 +2,6 @@
   margin-top: 10px !important;
   margin-bottom: 10px !important;
   width: auto !important;
-  // min-height: 420px;
   height: auto !important;
   border-radius: 20px !important;
   background-color: rgba(220, 220, 220, 0.2) !important;
@@ -11,17 +10,12 @@
   color:white !important;
 }
 
-// .custom-card:hover {
-//   transform: scale(1.05);
-// }
-
 .custom-card .card-body {
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
   align-items: center !important;
   height: 100% !important;
-
 }
 
 .custom-card h5 {
@@ -47,7 +41,6 @@
   margin-top: 10px !important;
   margin-bottom: 10px !important;
   width: auto !important;
-  // min-height: 420px;
   height: auto !important;
   border-radius: 20px !important;
   background-color: rgba(220, 220, 220, 0.2) !important;
@@ -64,7 +57,7 @@
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.accordion-item h5 {
+.accordion-item h2 {
   font-size: 1.5rem !important;
   margin-bottom: 1rem !important;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
