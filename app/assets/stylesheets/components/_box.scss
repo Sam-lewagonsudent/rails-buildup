@@ -1,5 +1,5 @@
 .box-test {
-  background-color: bisque;
+  background-color: rgb(26, 26, 26);
   width: 165px;
   aspect-ratio: 1;
   clip-path: polygon(
@@ -29,7 +29,7 @@
 }
 
 .box-text {
-  background-color: bisque;
+  background-color: rgb(26, 26, 26);
   padding: 7px 10px 7px 10px;
 
   --mask: radial-gradient(10px at 10px 10px,#0000 98%,#000) -10px -10px;
@@ -43,13 +43,14 @@
 }
 
 .box-rank {
-  background-color: rgb(75, 63, 49);
+  width: 100%;
+  background-color: #dbd5d5;
   padding: 7px 10px 7px 10px;
   clip-path: polygon(0 10.00px,10.00px 0,calc(100% - 10.00px) 0,100% 10.00px,100% calc(100% - 10.00px),calc(100% - 10.00px) 100%,10.00px 100%,0 calc(100% - 10.00px));
 }
 
 .box-reward {
-  background-color: bisque;
+  background-color: rgb(26, 26, 26);
   width: 150px;
   aspect-ratio: 1;
   clip-path: polygon(
@@ -76,8 +77,8 @@
 
 .pattern-home {
   --s: 100px; /* control the size */
-  --c1: #252525;
-  --c2: #493636;
+  --c1: #a3a3a3;
+  --c2: #dbd5d5;
 
   --_g: var(--c1)        6.25%,var(--c2)  6.3% 18.75%,var(--c1) 18.8% 31.25%,
         var(--c2) 31.3% 43.75%,var(--c1) 43.8% 56.25%,var(--c2) 56.3% 68.75%,#0000 0;
@@ -87,4 +88,21 @@
     radial-gradient(var(--s) at 0    100%,var(--_g)),
     radial-gradient(var(--s) at 100% 100%,var(--_g)) var(--c1);
   background-size: var(--s) var(--s);
+}
+
+.pattern-ach {
+  --s: 18px; /* control the size (the circle diameter) */
+  --c1: #fad4df;
+  --c2: #46422f;
+
+  --_g: radial-gradient(calc(var(--s)/2),var(--c1) 97%,#0000);
+  background:
+    var(--_g),var(--_g) calc(2*var(--s)) calc(2*var(--s)),
+    repeating-conic-gradient(from 45deg,#0000 0 25%,var(--c2) 0 50%) calc(-.707*var(--s)) calc(-.707*var(--s)),
+    repeating-linear-gradient(135deg,var(--c1) calc(var(--s)/-2) calc(var(--s)/2),var(--c2) 0 calc(2.328*var(--s)));
+  background-size: calc(4*var(--s)) calc(4*var(--s));
+  /*
+    0.707 = sqrt(2)/2
+    2.328 = 2*sqrt(2) - .5
+  */
 }
