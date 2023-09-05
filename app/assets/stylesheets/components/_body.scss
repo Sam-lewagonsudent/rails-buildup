@@ -1,3 +1,6 @@
+html{
+  background: rgb(255, 255, 255);
+}
 body,
 
 body {
@@ -9,17 +12,16 @@ body {
   // min-height: 100%
 
 
-  margin-top: 50px;
+  margin-top: 60px;
   padding: 0;
-  background: rgba($color: #616161, $alpha: 1.0);
-  // background: url('treehouse.gif') no-repeat center center fixed;
+  min-height: 667px;
+  background: url('branch.gif') no-repeat center center fixed;
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
 font-family: $body-font;
-color:white !important;
-
+color:rgb(56, 23, 23) !important;
 
 }
 // .home-profile{

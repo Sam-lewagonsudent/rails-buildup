@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <%= simple_form_for([@user_categories, @user], url: update_user_category_path, method: :patch) do |f| %>
+      <%= simple_form_for([@user_categories, @user], url: update_user_category_path, method: :patch, data: { controller: "hello" }, class: "category_form") do |f| %>
 
                 <%= f.error_notification %>
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -13,14 +13,18 @@
                   <label>
                     <div class="categories  text-center">
                      <%# <%= f.input :category_ids, label: "", as: :check_boxes, collection: [[category.title, category.id]], checked: @user.categories.include?(category) %>
+        <% color = category.category_color %>
+        <div class="custom-checkbox" style="--category_checkbox:<%= category.category_color %>;">
+        <%= label_tag "category_#{category.id}", category.title, class: "category_checkbox" %>
                       <%= check_box_tag 'user_category[category_ids][]', category.id, @user.categories.include?(category) %>
-                      <%= category.title %>
+                      <%# <%= category.title %>
+          </div>
                     </div>
                   </label>
                   <br>
                 <% end %>
                   <div class="text-center ">
-                    <%= f.submit 'Enregistrer', class:'btn categories text-center' %>
+                    <%= f.submit 'Enregistrer', class:'btn btn-outline-dark custom-btn'  %>
                   </div>
               </div>
             </div>

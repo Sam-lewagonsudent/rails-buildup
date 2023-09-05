@@ -1,6 +1,6 @@
 <h1>Actions#show</h1>
 <p>Find me in app/views/actions/show.html.erb</p>
-<%= link_to "retour à la liste des actions", actions_path() %>
+<%= link_to "retour à la liste des actions", actions_path(), class:'btn btn-outline-dark custom-btn'  %>
 
 <h1>Action Details</h1>
 
@@ -9,5 +9,4 @@
 <p>Span: <%= @action.span.to_i / 86_400 %> days</p>
 <p>Value: <%= @action.value %></p>
 
-<%= button_to "Add to My Challenges", add_to_challenges_action_path(@action), method: :post %>
-
+<%= button_to "Add to My Challenges", add_to_challenges_action_path(@action), method: :post, class:'btn btn-outline-dark custom-btn'  %>
