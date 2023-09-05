@@ -1,6 +1,10 @@
 
-  <%= link_to "Achievements", achievements_path, class:'btn btn-outline-dark categories' %>
-
+<div class="banner">
+  <div class="container">
+  <h1> Bienvenu sur votre profil</h1>
+  </div>
+</div>
+<%= link_to "Achievements", achievements_path, class:'btn btn-outline-dark categories ' %>
   <div class="col-md-4">
     <div class="accordion custom-card align-items-start" id="accordionPanelsStayOpenprofil1">
       <div class="accordion-item">
@@ -21,7 +25,7 @@
                           <%end%>
 
                         <div class="custom-card text-center fonts-text">
-                          <%= link_to "Ajuster mes categories", edit_user_category_path, class:"btn categories" %>
+                          <%= link_to "Ajuster mes categories", edit_user_category_path, class:"btn btn-custom categories " %>
                         </div>
                     </div>
                   </div>
