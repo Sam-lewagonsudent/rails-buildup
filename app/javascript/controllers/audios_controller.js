@@ -7,7 +7,7 @@ export default class extends Controller {
 
   }
   playSound() {
-    const audio = new Audio("assets/sounds/bomb.mp3")
+    const audio = new Audio("assets/sounds/clic2.wav")
     audio.play()
   }
 }
