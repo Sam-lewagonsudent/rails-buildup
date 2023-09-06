@@ -41,7 +41,7 @@
     <% completed_categories.add(completed_challenge.action.category.title.downcase.gsub(' ', '_')) %>
   <% end %>
 
-  <div class="custom-card" id="accordionPanelsStayOpenExample1">
+  <div class="custom-card-uc" id="accordionPanelsStayOpenExample1">
     <% completed_categories.each do |category| %>
       <div class="accordion-item1">
         <% category_display = category.gsub('_', ' ').titleize %> <!-- Convert back to display format -->

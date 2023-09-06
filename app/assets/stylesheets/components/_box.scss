@@ -40,6 +40,7 @@
 
 .text-center {
   margin-bottom: 0px !important;
+  // margin-left: 10px !important;
 }
 
 .box-rank {
@@ -50,7 +51,7 @@
 }
 
 .box-reward {
-  background-color: rgb(26, 26, 26);
+  background-color: #3d3d3d;
   width: 150px;
   aspect-ratio: 1;
   clip-path: polygon(
@@ -62,7 +63,7 @@
 }
 
 .box-home {
-  background-color: rgb(26, 26, 26);
+  background-color: #3d3d3d;
   width: 65px;
   aspect-ratio: 1;
   clip-path: polygon(
