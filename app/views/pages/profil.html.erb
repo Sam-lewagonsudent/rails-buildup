@@ -1,57 +1,53 @@
 
-      <div class="d-flex flex-column align-items-center user-header">
+      <div class="d-flex flex-column  user-header">
 
-        <div class="d-flex align-items-left">
-          <h2 class="mr-3"><%= current_user.user_name %></h2>
+        <div class="d-flex align-items-left text-start">
+          <h2 class="mr-3 text-start"><%= current_user.user_name %></h2>
 
           <% if current_user.selected_icon.present? %>
-            <div class="selected-icon">
+            <div class="selected-icon ">
               <%= image_tag("achievements/#{current_user.selected_icon}", alt: "Selected Icon", width: 50, height: 50, class: "img-fluid") %>
             </div>
           <% end %>
         </div>
       </div>
-      <div class="border-top">
-        <%= link_to "Achievements", achievements_path, class:'btn ' %>
-    <br>
-       <%= link_to "Log out",  destroy_user_session_path,data: {turbo_method: :delete}, class:'btn ' %>
+      <div class="bar-margin">
+        <div class="progress-bar">
+          <div class="progress" style="width: <%= @user_progress %>%;"></div>
+          </div>
+          <p>Level: <%= @user_level %></p>
+          <p>Total de vos points: <%= @total_value %></p>
+        </div>
       </div>
-  <div class="col-md-4">
-    <div class="accordion custom-card-uc align-items-start" id="accordionPanelsStayOpenprofil1">
-      <div class="accordion-item">
-            <h2 class="accordion-header fonts-title" id="panelsStayOpen-headingTwo-profil-1">
-            <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo-1" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo-1">
-                Mes categories selectionnées
-              </button>
-            </h2>
-                <div id="panelsStayOpen-collapseTwo-1" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo-1">
-                  <div class="accordion-body row justify-content-center">
-                    <div class="card-body text-center d-flex justify-content-start">
-                          <ul>
-                          <% @user_categories.each do |user_category|%>
-                        <li>
-                        <div class="custom-card text-center" style="background color:<%= user_category.category.category_color %>">
-                            <div class="categories fonts-text" >
-                              <%= user_category.category.title %>
-                            </div>
-                        </div>
-                        </li>
-                          <%end%>
-                        <li>
-                        <div class="custom-card text-center fonts-text">
-                          <%= link_to "Ajuster mes categories", edit_user_category_path, class:"btn btn-custom categories " %>
-                        </div>
-                        </li>
-                        </ul>
+      <div class=" container">
+          <button class="btn border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Mes categories selectionnées <%= image_tag "collapsedown.png", class:"litlle-icon"%>
+          </button>
+                  <div class="collapse" id="collapseExample">
+                    <div class="categories fonts-text">
+                            <% @user_categories.each do |user_category|%>
+
+                          <div class="custom-card text-center" style="background color:<%= user_category.category.category_color %>">
+                              <div class="categories fonts-text" >
+                                <%= user_category.category.title %>
+                              </div>
+                          </div>
+
+                            <%end%>
+
+                          <div class="custom-card text-center fonts-text">
+                            <%= link_to "Ajuster mes categories", edit_user_category_path, class:"btn btn-custom categories " %>
+                          </div>
+
                     </div>
                   </div>
-                </div>
+        </div>
       </div>
     </div>
   </div>
 
 
-<h2>Challenges terminés</h2>
+<h2 class="mt-4 mb-4">Challenges terminés</h2>
 <div class="completed-challenges-list">
   <% completed_challenge_counts = Hash.new(0) %>
   <% completed_categories = Set.new %>
@@ -61,18 +57,14 @@
     <% completed_categories.add(completed_challenge.action.category.title.downcase.gsub(' ', '_')) %>
   <% end %>
 
-  <div class="accordion custom-card-uc" id="accordionPanelsStayOpenExample1">
+<div class=" container">
     <% completed_categories.each do |category| %>
-      <div class="accordion-item">
         <% category_display = category.gsub('_', ' ').titleize %>
-        <h3 class="accordion-header  fonts-title" id="panelsStayOpen-headingOne-<%= category %>">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne-<%= category %>" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne-<%= category %>">
-            <%= category_display %>
+            <button class="btn border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%=category%>" aria-expanded="false" aria-controls="collapse<%=category%>">
+            <%= category_display %><%= image_tag "collapsedown.png", class:"litlle-icon"%>
           </button>
-        </h3>
-        <div id="panelsStayOpen-collapseOne-<%= category %>" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne-<%= category %>" data-bs-parent="#accordionPanelsStayOpenExample1">
-          <div class="accordion-body">
-            <div class="card-body text-center d-flex justify-content-start">
+          <div class="collapse" id="collapse<%=category%>">
+            <div class="categories fonts-text">
               <ul>
                 <% @user_challenges.select { |uc| uc.done && uc.action.category.title.downcase.gsub(' ', '_') == category }.each do |completed_challenge| %>
                   <% challenge_name = completed_challenge.action.name %>
@@ -84,8 +76,13 @@
               </ul>
             </div>
           </div>
+    <% end %>
+</div>
+
+<div class=" container">
+        <div class="border-top"></div>
+          <%= link_to "Achievements", achievements_path, class:'btn ' %>
+          <br>
+          <%= link_to "Log out",  destroy_user_session_path,data: {turbo_method: :delete}, class:'btn ' %>
         </div>
       </div>
-    <% end %>
-  </div>
-</div>

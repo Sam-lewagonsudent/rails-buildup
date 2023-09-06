@@ -32,14 +32,16 @@
       </div>
     </div>
 
+<div class="container">
     <div class="bar-margin">
-    <div class="progress-bar">
-      <div class="progress" style="width: <%= @user_progress %>%;"></div>
+      <div class="progress-bar">
+        <div class="progress" style="width: <%= @user_progress %>%;"> </div>
+        </div>
+        <p>Level: <%= @user_level %></p>
+        <p>Total de vos points: <%= @total_value %></p>
       </div>
-      <p>Level: <%= @user_level %></p>
-      <p>Total de vos points: <%= @total_value %></p>
-    </div>
 
+</div>
 
 
 
@@ -73,31 +75,21 @@
 
 
   <div class="container">
-    <div class="row mt-5">
-      <div class="col-md-4">
-        <div class="accordion custom-card align-items-start" id="accordionPanelsStayOpenExample1">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="panelsStayOpen-headingOne-1">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne-1" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne-1">
-                Classement des utilisateurs par actions complétées.
-              </button>
-            </h2>
-            <div id="panelsStayOpen-collapseOne-1" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne-1">
-              <div class="accordion-body">
-                <div class="card-body text-center d-flex justify-content-start">
-                  <% @ranked_users.each_with_index do |user, index| %>
-                    <p>
-                      <%= index + 1 %>. <%= user.user_name %> - Valeur total: <%= user.total_value %>
-                    </p>
-                  <% end %>
-                </div>
+    <button class="btn border-top text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Classement des utilisateurs par actions complétées.<%= image_tag "collapsedown.png", class:"litlle-icon"%>
+    </button>
+      <div class="collapse" id="collapseExample">
+        <div class="categories fonts-text">
+          <% @ranked_users.each_with_index do |user, index| %>
+              <div class="custom-card text-center">
+                <%= index + 1 %>. <%= user.user_name %> - Valeur total: <%= user.total_value %>
 
+            <% end %>
               </div>
-            </div>
           </div>
         </div>
-      </div>
-
+    </div>
+  </div>
       <div class="col-md-4">
         <div class="accordion custom-card align-items-start" id="accordionPanelsStayOpenExample2">
           <div class="accordion-item">
@@ -150,7 +142,7 @@
         </div>
       </div>
     </div>
-  </div>
+
 
   <% end %>
 </div>
