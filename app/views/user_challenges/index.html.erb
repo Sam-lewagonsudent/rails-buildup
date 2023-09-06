@@ -41,12 +41,12 @@
     <% completed_categories.add(completed_challenge.action.category.title.downcase.gsub(' ', '_')) %>
   <% end %>
 
-  <div class="custom-card-uc" id="accordionPanelsStayOpenExample1">
+  <div class="accordion custom-card-uc" id="accordionPanelsStayOpenExample1">
     <% completed_categories.each do |category| %>
-      <div class="accordion-item1">
-        <% category_display = category.gsub('_', ' ').titleize %> 
+      <div class="accordion-item">
+        <% category_display = category.gsub('_', ' ').titleize %>
         <h3 class="accordion-header" id="panelsStayOpen-headingOne-<%= category %>">
-          <button class="accordion-button1" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne-<%= category %>" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne-<%= category %>">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne-<%= category %>" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne-<%= category %>">
             <%= category_display %>
           </button>
         </h3>

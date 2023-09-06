@@ -1,0 +1,45 @@
+
+      <div class="d-flex flex-column align-items-center user-header">
+
+        <div class="d-flex align-items-left">
+          <h2 class="mr-3"><%= current_user.user_name %></h2>
+
+          <% if current_user.selected_icon.present? %>
+            <div class="selected-icon">
+              <%= image_tag("achievements/#{current_user.selected_icon}", alt: "Selected Icon", width: 50, height: 50, class: "img-fluid") %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+        <%= link_to "Achievements", achievements_path, class:'btn btn-outline-dark categories ' %>
+        <br>
+       <%= link_to "Log out",  destroy_user_session_path,data: {turbo_method: :delete}, class:'btn btn-outline-dark categories ' %>
+
+  <div class="col-md-4">
+    <div class="accordion custom-card-uc align-items-start" id="accordionPanelsStayOpenprofil1">
+      <div class="accordion-item">
+            <h2 class="accordion-header fonts-title" id="panelsStayOpen-headingTwo-profil-1">
+            <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo-1" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo-1">
+                Mes categories selectionnées
+              </button>
+            </h2>
+                <div id="panelsStayOpen-collapseTwo-1" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo-1">
+                  <div class="accordion-body ">
+                    <div class="card-body text-center d-flex justify-content-start">
+                          <% @user_categories.each do |user_category|%>
+                        <div class="custom-card text-center" style="background color:<%= user_category.category.category_color %>">
+                            <div class="categories fonts-text" >
+                              <%= user_category.category.title %>
+                            </div>
+                        </div>
+                          <%end%>
+
+                        <div class="custom-card text-center fonts-text">
+                          <%= link_to "Ajuster mes categories", edit_user_category_path, class:"btn btn-custom categories " %>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+      </div>
+    </div>
+  </div>
