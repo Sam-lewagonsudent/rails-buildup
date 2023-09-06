@@ -26,19 +26,7 @@
           </li>
           <li class="nav-item active " data-audios-target="elem" data-action='click->audios#playSound'>
             <%= link_to "Log out",  destroy_user_session_path,data: {turbo_method: :delete}, class: "nav-link fonts-nav" %>
-
           </li>
-
-           <%# <li class="nav-item dropdown " data-audios-target="elem" data-action='click->audios#playSound'>
-          <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Menu</a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete, audios_target: "elem", action: "click->audios#playSound"}, class: "dropdown-item" %>
-              <%# <%= link_to "liste des actions disponible", actions_path, data: { audios_target: "elem", action: "click->audios#playSound" }, class: "dropdown-item" %>
-              <%# <%= link_to "liste de vos categories",  user_categories_path, data: { audios_target: "elem", action: "click->audios#playSound" }, data: { audios_target: "elem", action: "click->audios#playSound" }, class: "dropdown-item" %>
-              <%# <%= link_to "liste de vos challenges",  user_challenges_path, data: { audios_target: "elem", action: "click->audios#playSound" }, data: { audios_target: "elem", action: "click->audios#playSound" }, class: "dropdown-item" %>
-            <%# </div>
-          </li> %>
         <% else %>
           <li class="nav-item inline">
             <%= link_to 'Inscription', new_user_registration_path, data: { audios_target: "elem", action: "click->audios#playSound" }, class: "nav-link"%>
@@ -51,3 +39,38 @@
     </div>
   </div>
 </div>
+
+<nav class="mobile-nav box">
+        <%# <a href="#" class="bloc-icon">
+            <img src="./home.png" alt="npa">
+        </a>%>
+            <%= link_to root_path, class:"bloc-icon" do%>
+             <%= image_tag "home.png"%>
+              <% end %>
+
+        <%# <a href="#" class="bloc-icon">
+            <img src="search.png" alt="">
+        </a> %>
+         <%= link_to actions_path, class:"bloc-icon" do %>
+          <%= image_tag "search.png"%>
+           <% end %>
+
+        <%# <a href="#" class="bloc-icon">
+            <img src="leaf.png" alt="">
+        </a> %>
+         <%= link_to  user_challenges_path, class:"bloc-icon" do %>
+          <%= image_tag "leaf.png"%>
+           <% end %>
+
+        <%# <a href="#" class="bloc-icon">
+            <img src="user.png" alt="">
+        </a> %>
+         <%= link_to  profile_path,  class:"bloc-icon" do%>
+          <%= image_tag "user.png"%>
+           <% end %>
+
+        <%# <a href="#" class="bloc-icon">
+            <img src="ressources/user.svg" alt="">
+        </a> %>
+
+    </nav>
