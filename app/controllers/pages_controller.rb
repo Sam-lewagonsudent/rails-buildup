@@ -25,6 +25,9 @@ class PagesController < ApplicationController
     @user_challenges = current_user.user_challenges.includes(:action)
     @completed_chal_historic = UserChallenge.where(user_id: current_user.id, done: true)
     @user_categories = UserCategory.where(user_id: current_user.id)
+    @total_value = current_user.total_value_of_completed_actions
+    @user_level = current_level(@total_value)
+    @user_progress = @total_value % 100
   end
 
   def bootstrap
