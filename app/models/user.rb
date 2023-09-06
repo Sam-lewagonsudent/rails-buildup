@@ -36,4 +36,12 @@ class User < ApplicationRecord
     completed_actions = user_challenges.where(action: action, done: true).count
     completed_actions >= 5
   end
+  
+  def has_completed_actions?
+    user_challenges.joins(:action)
+                  .where(done: true)
+                  .group('actions.id')
+                  .having('COUNT(user_challenges.id) >= 5')
+                  .exists?
+  end
 end
