@@ -1,12 +1,13 @@
 <h1>Détails du défi utilisateur</h1>
 
 <p>Action: <%= @user_challenge.action.name %></p>
-<p>Terminé: <%= @user_challenge.done %></p>
+<p>Challenge en cours: <%= @user_challenge.done ? "Bien joué" : "Vous n'avez pas terminé" %></p>
 <p>Date de réalisation: <%= @user_challenge.completed_date %></p>
 
 <% unless @user_challenge.done %>
-  <%= button_to "Modifier le statut.", toggle_complete_user_challenge_path(@user_challenge), method: :patch %>
+  <%= button_to "Modifier le statut.", toggle_complete_user_challenge_path(@user_challenge), method: :patch, class:'btn btn-outline-dark categories fonts-text'  %>
 <% end %>
-
-<%= link_to "Retour", user_challenges_path %>
-<%= link_to "Home", root_path %>
+<br>
+<%= link_to "Retour à vos challenges", user_challenges_path , class:'btn btn-outline-dark categories fonts-text' %>
+<br>
+<%= link_to "Retour à la page d'accueil", root_path , class:'btn btn-outline-dark categories fonts-text' %>
