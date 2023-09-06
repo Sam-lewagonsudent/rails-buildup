@@ -1,5 +1,3 @@
-<%= link_to "retour à la liste des actions", actions_path(), class:'btn btn-outline-dark categories'  %>
-
 <h1>Détails de l'action choisie.</h1>
 
 <p>Nom: <%= @action.name %></p>
@@ -7,4 +5,5 @@
 <p>Période: <%= @action.span.to_i / 86_400 %> days</p>
 <p>Valeur: <%= @action.value %></p>
 
-<%=button_to "Ajouter à mes challenges", add_to_challenges_action_path(@action), method: :post, class:'btn btn-outline-dark categories'  %>
+<%=button_to "Ajouter à mes challenges", add_to_challenges_action_path(@action), method: :post, class:'btn btn-outline-dark categories  btn-categories'  %>
+<%= link_to "retour à la liste des actions", actions_path(), class:'btn btn-outline-dark categories  btn-categories'  %>
