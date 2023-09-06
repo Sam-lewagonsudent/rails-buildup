@@ -1,6 +1,5 @@
 <div id="categories">
   <% if @selected_category_ids.empty? %>
-    <p>Filtrer les actions par catégories</p>
   <% elsif @selected_categories.any? %>
     <h1>Challenges choisis</h1>
     <p>selections: <%= @selected_categories.map(&:title).join(', ') %></p>
