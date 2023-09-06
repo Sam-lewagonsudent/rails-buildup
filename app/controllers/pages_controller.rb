@@ -22,10 +22,10 @@ class PagesController < ApplicationController
   end
 
   def profil
+    @user_challenges = current_user.user_challenges.includes(:action)
     @completed_chal_historic = UserChallenge.where(user_id: current_user.id, done: true)
     @user_categories = UserCategory.where(user_id: current_user.id)
   end
-
 
   def bootstrap
     @user_categories = UserCategory.where(user_id: current_user.id)
