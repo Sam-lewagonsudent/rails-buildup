@@ -1,14 +1,11 @@
-<h1>UserChallenges#show</h1>
-<p>Find me in app/views/user_challenges/show.html.erb</p>
-
-<h1>User Challenge Details</h1>
+<h1>Détails du défi utilisateur</h1>
 
 <p>Action: <%= @user_challenge.action.name %></p>
-<p>Completed: <%= @user_challenge.done %></p>
-<p>Completed Date: <%= @user_challenge.completed_date %></p>
+<p>Terminé: <%= @user_challenge.done %></p>
+<p>Date de réalisation: <%= @user_challenge.completed_date %></p>
 
 <% unless @user_challenge.done %>
-  <%= button_to "Toggle Completion Status", toggle_complete_user_challenge_path(@user_challenge), method: :patch %>
+  <%= button_to "Modifier le statut.", toggle_complete_user_challenge_path(@user_challenge), method: :patch %>
 <% end %>
 
-<%= link_to "Back", user_challenges_path %>
+<%= link_to "Retour", user_challenges_path %>

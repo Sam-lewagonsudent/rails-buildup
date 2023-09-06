@@ -1,12 +1,10 @@
-<h1>Actions#show</h1>
-<p>Find me in app/views/actions/show.html.erb</p>
 <%= link_to "retour à la liste des actions", actions_path(), class:'btn btn-outline-dark categories'  %>
 
-<h1>Action Details</h1>
+<h1>Détails de l'action choisie.</h1>
 
-<p>Name: <%= @action.name %></p>
-<p>Category: <%= @action.category.title %></p>
-<p>Span: <%= @action.span.to_i / 86_400 %> days</p>
-<p>Value: <%= @action.value %></p>
+<p>Nom: <%= @action.name %></p>
+<p>Categorie: <%= @action.category.title %></p>
+<p>Période: <%= @action.span.to_i / 86_400 %> days</p>
+<p>Valeur: <%= @action.value %></p>
 
-<%= button_to "Add to My Challenges", add_to_challenges_action_path(@action), method: :post, class:'btn btn-outline-dark categories'  %>
+<%=button_to "Ajouter à mes challenges", add_to_challenges_action_path(@action), method: :post, class:'btn btn-outline-dark categories'  %>
