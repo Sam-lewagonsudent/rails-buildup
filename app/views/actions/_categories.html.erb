@@ -3,7 +3,7 @@
     <p>Filtrer les actions par catégories</p>
   <% elsif @selected_categories.any? %>
     <h1>Challenges choisis</h1>
-    <p>selection: <%= @selected_categories.map(&:title).join(', ') %></p>
+    <p>selections: <%= @selected_categories.map(&:title).join(', ') %></p>
     <div class="custom-container">
       <div class="row">
         <% @actions.each do |action| %>
@@ -31,6 +31,6 @@
       </div>
     </div>
   <% else %>
-    <p>No actions found for the selected categories.</p>
+    <p>Pas d'actions trouvées pour les catégories sélectionnées.</p>
   <% end %>
 </div>

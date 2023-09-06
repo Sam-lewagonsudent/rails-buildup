@@ -1,7 +1,4 @@
-<h1>UserChallenges#update</h1>
-<p>Find me in app/views/user_challenges/update.html.erb</p>
-
-<h1>Edit User Challenge</h1>
+<h1>Mise à jour du défi utilisateur</h1>
 
 <%= form_for(@user_challenge) do |f| %>
   <div class="field">
@@ -14,7 +11,7 @@
     <%= f.date_field :completed_date %>
   </div>
 
-  <%= f.submit "Update User Challenge" %>
+  <%= f.submit "Mettre à jour le défi utilisateur" %>
 <% end %>
 
-<%= link_to "Back", user_challenges_path %>
+<%= link_to "Retour", user_challenges_path %>
