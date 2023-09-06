@@ -10,7 +10,6 @@ class UserChallengesController < ApplicationController
   end
 
   def update
-
   end
 
   def create

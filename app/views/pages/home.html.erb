@@ -20,11 +20,11 @@
 
           <% if current_user.selected_icon.present? %>
             <div class="selected-icon">
-            <div class="box-home">
-                    <div class="polygon-container">
-              <%= image_tag("achievements/#{current_user.selected_icon}", alt: "Selected Icon", width: 50, height: 50, class: "img-fluid") %>
-            </div>
-            </div>
+              <div class="box-home">
+                <div class="polygon-container">
+                  <%= image_tag("achievements/#{current_user.selected_icon}", alt: "Selected Icon", width: 40, height: 40, class: "img-fluid") %>
+                </div>
+              </div>
             </div>
           <% end %>
         </div>
