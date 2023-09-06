@@ -14,10 +14,7 @@
       </div>
 <%= link_to "Achievements", achievements_path, class:'btn btn-outline-dark categories ' %>
   <div class="col-md-4">
-    <div class="accordion custom-card-uc align-items-start" id="accordionPanelsStayOpenprofil1">
-      <div class="accordion-item">
-            <h2 class="accordion-header fonts-title" id="panelsStayOpen-headingTwo-profil-1">
-            <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo-1" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo-1">
+   <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">  
                 Mes categories selectionnées
               </button>
             </h2>
@@ -57,18 +54,18 @@
                     <div class="accordion-body">
                       <div class="card-body text-center d-flex justify-content-start">
                         <% @completed_chal_historic.each do |user_challenge| %>
-                          <p class="card-text d-flex">
+                          <%# <p class="card-text d-flex">
                             Challenge: <%= user_challenge.done %>
-                            Date: <%= user_challenge.created_at %>
-                            action: <%= user_challenge.action.name %>
-                          </p>
+                            <%# Date: <%= user_challenge.created_at %>
+                            <%# action: <%= user_challenge.action.name %>
+                          <%# </p>
                         <% end %>
-                      </div>
+                      <%# </div>
                     </div>
                   </div>
             </div>
           </div>
-      </div>
+      </div>%>
 
 
       <div class="col-md-4">
@@ -95,7 +92,7 @@
             </div>
           </div>
         </div>
-      </div> %>
+      </div>
 
 <h2>Challenges terminés</h2>
 <div class="completed-challenges-list">
