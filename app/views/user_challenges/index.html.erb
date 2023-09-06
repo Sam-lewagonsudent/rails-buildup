@@ -1,13 +1,13 @@
 
 <div class="banner">
   <div class="container">
-    <h1><strong>Vos Challenges!</strong></h1>
+    <h1 class="text-center"><strong>Vos Challenges!</strong></h1>
   </div>
 </div>
 
 <div class="custom-container">
 
-  <h2>Challenges en cours</h2>
+  <h2 class="text-center">Challenges en cours</h2>
   <div class="row">
     <% sorted_user_challenges = @user_challenges.reject { |uc| uc.done }.sort_by { |uc| [uc.action.category.title, uc.action.name] } %>
     <% current_category = nil %>
@@ -30,45 +30,6 @@
       </div>
     <% end %>
   </div>
-
-<h2>Challenges terminés</h2>
-<div class="completed-challenges-list">
-  <% completed_challenge_counts = Hash.new(0) %>
-  <% completed_categories = Set.new %>
-  <% @user_challenges.select { |uc| uc.done }.each do |completed_challenge| %>
-    <% challenge_name = completed_challenge.action.name %>
-    <% completed_challenge_counts[challenge_name] += 1 %>
-    <% completed_categories.add(completed_challenge.action.category.title.downcase.gsub(' ', '_')) %>
-  <% end %>
-
-  <div class="custom-card-uc" id="accordionPanelsStayOpenExample1">
-    <% completed_categories.each do |category| %>
-      <div class="accordion-item1">
-        <% category_display = category.gsub('_', ' ').titleize %> 
-        <h3 class="accordion-header" id="panelsStayOpen-headingOne-<%= category %>">
-          <button class="accordion-button1" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne-<%= category %>" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne-<%= category %>">
-            <%= category_display %>
-          </button>
-        </h3>
-        <div id="panelsStayOpen-collapseOne-<%= category %>" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne-<%= category %>" data-bs-parent="#accordionPanelsStayOpenExample1">
-          <div class="accordion-body">
-            <div class="card-body text-center d-flex justify-content-start">
-              <ul>
-                <% @user_challenges.select { |uc| uc.done && uc.action.category.title.downcase.gsub(' ', '_') == category }.each do |completed_challenge| %>
-                  <% challenge_name = completed_challenge.action.name %>
-                  <% if completed_challenge_counts[challenge_name] > 0 %>
-                    <li><%= "#{challenge_name} (Completed #{completed_challenge_counts[challenge_name]} times)" %></li>
-                    <% completed_challenge_counts[challenge_name] = 0 %>
-                  <% end %>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
 
 
 
