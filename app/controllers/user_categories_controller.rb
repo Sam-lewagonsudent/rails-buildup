@@ -24,7 +24,7 @@ class UserCategoriesController < ApplicationController
       user.user_categories.create(category_id: category_id)
     end
 
-    redirect_to root_path, notice: 'Categories were successfully associated.'
+    redirect_to root_path
   end
 
   def edit

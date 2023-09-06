@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get '/achievements', to: 'achievements#index', as: 'achievements'
   get '/pages/profile', to: 'pages#profile', as: 'profile'
+  get '/pages/profil', to: 'pages#profil', as: 'profil'
   get '/redirection', to: 'pages#redirection', as: 'redirection'
   get '/pages/impact', to: 'pages#impact', as: 'impact'
   get '/pages/convertisseur', to: 'pages#convertisseur', as: 'convertisseur'
