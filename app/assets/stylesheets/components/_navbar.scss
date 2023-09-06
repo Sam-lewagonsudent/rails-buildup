@@ -30,3 +30,38 @@
 .nav-link {
   padding:0
 }
+
+@media (max-width: 600px) {
+  .navbar-lewagon {
+    display: none;
+  }
+}
+
+.mobile-nav {
+  background: #3b9b48;
+  position: fixed;
+  bottom: 0;
+  height: 65px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  z-index: 1;
+}
+
+
+
+.bloc-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bloc-icon img {
+  width: 20px;
+}
+
+@media screen and (min-width: 600px) {
+  .mobile-nav {
+  display: none;
+  }
+}
