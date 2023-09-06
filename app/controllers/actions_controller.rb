@@ -28,7 +28,7 @@ class ActionsController < ApplicationController
     if user_challenge.valid?
       user_challenge.save
 
-      redirect_to actions_path, notice: 'Action was added to your challenges.'
+      redirect_to actions_path
 
     else
       redirect_to action_path(@action), alert: user_challenge.errors.full_messages.join(", ")
