@@ -8,7 +8,7 @@
       <div class="row">
         <% @actions.each do |action| %>
           <div class="col-6 cards-action-index">
-            <div class="custom-card-custom-action-card">
+            <div class="custom-card-custom-action-card" style="border: 3px solid <%= action.category.category_color %>">
               <div class="custom-card-title text-center" style="background-color: <%= action.category.category_color %>">
 
 

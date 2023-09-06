@@ -14,27 +14,33 @@
         <div id="collapse<%= category.id %>" class="accordion-collapse collapse" aria-labelledby="heading<%= category.id %>" data-bs-parent="#achievementsAccordion">
           <div class="accordion-body">
             <% category_actions.each do |action| %>
-              <div class="achievement pattern-ach d-flex flex-column align-items-center">
+              <div class="achievement d-flex align-items-center mb-2">
                 <% if @user.achieved_action?(action) %>
-                  <div class="box-text d-flex justify-content-center align-items-center flex-grow-1">
-                    <p class="text-white">
-                      <%= action.name %> <br> Succès ✅
-                    </p>
-                  </div>
-                  <div class="box-test">
-                    <div class="polygon-container">
-                      <%= image_tag("achievements/#{action.icon}", alt: action.name, class: "svg-icon") %>
+                  <div class="card-ach-done">
+                    <div class="ach-whole-card d-flex">
+                      <%= image_tag("achievements/#{action.icon}", alt: action.name, class: "svg-ach-square-done") %>
+                      <div class="svg-ach-text-done">
+                        <p class="text-white mt-2 ms-2">
+                          <%= action.name %> ✅
+                        </p>
+                        <p class="text-white-small ms-2">
+                          Completer le challenge 5 fois.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 <% else %>
-                  <div class="box-text d-flex justify-content-center align-items-center flex-grow-1">
-                    <p class="text-white">
-                      <%= action.name %> <br> En cours ⌛
-                    </p>
-                  </div>
-                  <div class="box-test">
-                    <div class="polygon-container">
-                      <%= image_tag("icons_grey/#{action.icon}", alt: action.name, class: "svg-icon") %>
+                  <div class="card-ach-not">
+                    <div class="ach-whole-card d-flex">
+                      <%= image_tag("icons_grey/#{action.icon}", alt: action.name, class: "svg-ach-square-not") %>
+                      <div class="svg-ach-text-not">
+                        <p class="text-white mt-2 ms-2">
+                          <%= action.name %> ⌛
+                        </p>
+                        <p class="text-white-small ms-2">
+                            Completer le challenge 5 fois.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 <% end %>
