@@ -4,7 +4,7 @@
   width: auto !important;
   height: auto !important;
   border-radius: 20px !important;
-  background-color: rgba(220, 220, 220, 0.2) !important;
+  background-color:rgba(12, 160, 49, 0.9) !important;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7) !important;
   transition: transform 0.2s !important;
 }
@@ -41,10 +41,11 @@
   width: auto !important;
   background-color: rgba(220, 220, 220, 0.2) !important;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7) !important;
-
   font-size: 1.5rem !important;
-  text-shadow: -1px 0 rgb(207, 207, 207), 0 1px rgb(207, 207, 207), 1px 0  rgb(207, 207, 207), 0 -1px rgb(207, 207, 207);
+  color: white;
+  text-shadow: -1px 0 rgb(255, 255, 255), 0 1px rgb(207, 207, 207), 1px 0  rgb(207, 207, 207), 0 -1px rgb(207, 207, 207);
 }
+
 
 .accordion-item {
   margin-top: 10px !important;
@@ -150,4 +151,3 @@
     width: 10vw;
     height: 10vh;
   }
-
