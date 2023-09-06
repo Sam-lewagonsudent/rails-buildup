@@ -10,7 +10,7 @@
         <% @all_user_categories.each do |category| %>
           <% color = category.category_color %>
           <div class=" row text-center custom-checkbox btn-categories" style="--category_checkbox:<%= category.category_color %> ;">
-            <%= label_tag "category_#{category.id}", category.title, class: "category_checkbox" %>
+            <%= label_tag "category_#{category.id}", category.title, class: "category_checkbox  btn-categories" %>
             <%= check_box_tag 'categories[]', category.id, @selected_category_ids.include?(category.id) %>
           </div>
         <% end %>
