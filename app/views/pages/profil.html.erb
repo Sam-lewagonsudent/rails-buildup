@@ -24,8 +24,8 @@
         </div>
       </div>
       <div class=" container">
-          <button class="btn border-top  text-start d-flex justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-          Mes categories déjà selectionnées <%= image_tag "collapsedown.png", class:"litlle-icon align-items-end"%>
+          <button class="btn border-top  text-start d-flex justify-content-between" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Mes categories déjà selectionnées <%= image_tag "collapsedown.png", class:"litlle-icon justify-content-end"%>
           </button>
                   <div class="collapse" id="collapseExample">
                     <div class="categories fonts-text">
@@ -89,6 +89,6 @@
           <%= link_to "Succès", achievements_path, class:'btn ' %>
 
           <br>
-          <%= link_to "déconnexion",  destroy_user_session_path,data: {turbo_method: :delete}, class:'btn ' %>
+          <%= link_to "Déconnexion",  destroy_user_session_path,data: {turbo_method: :delete}, class:'btn ' %>
         </div>
       </div>
