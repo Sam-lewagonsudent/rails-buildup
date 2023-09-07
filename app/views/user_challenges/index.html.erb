@@ -8,7 +8,7 @@
 <div class="custom-container">
 
   <h2 class="text-center">Challenges en cours</h2>
-  <div class="row">
+  <div class="row marge-div">
     <% sorted_user_challenges = @user_challenges.reject { |uc| uc.done }.sort_by { |uc| [uc.action.category.title, uc.action.name] } %>
     <% current_category = nil %>
     <% sorted_user_challenges.each do |user_challenge| %>
