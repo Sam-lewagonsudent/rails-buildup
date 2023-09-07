@@ -10,6 +10,6 @@ class RewardsController < ApplicationController
     selected_action = Action.find(params[:reward][:selected_action_id])
     @user.selected_icon = selected_action.icon
     @user.save!
-    redirect_to root_path
+    redirect_to home_path
   end
 end

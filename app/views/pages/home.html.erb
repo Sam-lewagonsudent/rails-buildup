@@ -34,16 +34,15 @@
       </div>
     </div>
 
-<div class="container">
+  <div class="container">
     <div class="bar-margin">
       <div class="progress-bar">
         <div class="progress" style="width: <%= @user_progress %>%;"> </div>
-        </div>
+      </div>
         <p>Level: <%= @user_level %></p>
         <p>Total de vos points: <%= @total_value %></p>
-      </div>
-
-</div>
+    </div>
+  </div>
 
   <div class="container">
     <div class="row mb-3">
@@ -51,25 +50,25 @@
         <% sorted_user_challenges = @user_challenges.reject { |uc| uc.done }.sort_by { |uc| [uc.action.category.title, uc.action.name] } %>
         <% current_category = nil %>
           <% sorted_user_challenges.each do |user_challenge| %>
-      <div class="col-6 cards-action-index">
-          <div class="home-card" style="border: 3px solid <%= user_challenge.action.category.category_color %>" >
+          <div class="col-6 cards-action-index">
+            <div class="home-card" style="border: 3px solid <%= user_challenge.action.category.category_color %>" >
 
-            <div class="custom-card-title" style="background-color: <%= user_challenge.action.category.category_color %>">
-              <%= link_to user_challenge_path(user_challenge), class:'link-to-text text-truncate' do %>
-                <%= user_challenge.action.name %>
-              <% end %>
-            </div>
-              <% unless user_challenge.done %>
+                <div class="custom-card-title" style="background-color: <%= user_challenge.action.category.category_color %>">
+                  <%= link_to user_challenge_path(user_challenge), class:'link-to-text text-truncate' do %>
+                    <%= user_challenge.action.name %>
+                  <% end %>
+                </div>
+                  <% unless user_challenge.done %>
 
                 <div class="custom-card-icon ">
                   <%= link_to user_challenge_path(user_challenge) do %>
                     <%= image_tag("icons/#{user_challenge.action.icon}", class:"home-card-icon", alt: 'Icon') %>
                   <% end %>
                 </div>
-              <% end %>
+                <% end %>
+            </div>
           </div>
-      </div>
-      <% end %>
+        <% end %>
       </div>
     </div>
   </div>
@@ -83,12 +82,12 @@
           <% @ranked_users.each_with_index do |user, index| %>
               <div class="custom-card text-center">
                 <%= index + 1 %>. <%= user.user_name %> - Valeur total: <%= user.total_value %>
-
-            <% end %>
               </div>
+          <% end %>
+
           </div>
         </div>
-    </div>
+      </div>
   </div>
       <div class="container">
         <button class="btn border-top text-start d-flex justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHome1" aria-expanded="false" aria-controls="collapseHome1">
@@ -104,10 +103,8 @@
                       Total d'equivalent CO2 economisé: <%= category.total_value / 0.01 %> grCO2
                     </p>
                   <% end %>
-
             </div>
           </div>
-
       </div>
 
     <div class="container">
@@ -124,10 +121,8 @@
                       </p>
                     <% end %>
                   <% end %>
-
           </div>
         </div>
-
     </div>
 
 
