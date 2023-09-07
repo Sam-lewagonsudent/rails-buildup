@@ -20,14 +20,14 @@
         </div>
       </div>
       <div class=" container">
-          <button class="btn border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-          Mes categories selectionnées <%= image_tag "collapsedown.png", class:"litlle-icon"%>
+          <button class="btn border-top  text-start d-flex justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          Mes categories selectionnées <%= image_tag "collapsedown.png", class:"litlle-icon align-items-end"%>
           </button>
                   <div class="collapse" id="collapseExample">
                     <div class="categories fonts-text">
                             <% @user_categories.each do |user_category|%>
 
-                          <div class="custom-card text-center" style="background color:<%= user_category.category.category_color %>">
+                          <div class="custom-card text-center " style="background color:<%= user_category.category.category_color %>">
                               <div class="categories fonts-text" >
                                 <%= user_category.category.title %>
                               </div>
@@ -60,7 +60,7 @@
 <div class=" container">
     <% completed_categories.each do |category| %>
         <% category_display = category.gsub('_', ' ').titleize %>
-            <button class="btn border-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%=category%>" aria-expanded="false" aria-controls="collapse<%=category%>">
+            <button class="btn border-top  text-start d-flex justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%=category%>" aria-expanded="false" aria-controls="collapse<%=category%>">
             <%= category_display %><%= image_tag "collapsedown.png", class:"litlle-icon"%>
           </button>
           <div class="collapse" id="collapse<%=category%>">
