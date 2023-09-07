@@ -61,6 +61,7 @@
     <% completed_challenge_counts[challenge_name] += 1 %>
     <% completed_categories.add(completed_challenge.action.category.title.downcase.gsub(' ', '_')) %>
   <% end %>
+
 </div>
 <div class=" container">
     <% completed_categories.each do |category| %>
