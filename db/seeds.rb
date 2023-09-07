@@ -32,7 +32,7 @@ divers = Category.create!(title: "Divers", category_color: "#9B74CE")
 puts 'Category finished'
 
 puts 'ACTION started'
-piss = Action.create!(name: "Pisser sous la douche", span: 3.weeks, value: 10, category: divers, icon: 'icons8-environment.svg')
+piss = Action.create!(name: "Faire pipi sous la douche", span: 3.weeks, value: 10, category: divers, icon: 'icons8-environment.svg')
 bike = Action.create!(name: "Faire du vélo", span: 1.day, value: 20, category: transport, icon: 'icons8-bike.svg')
 vegetable = Action.create!(name: "Manger des légumes", span: 2.weeks, value: 30, category: alimentation, icon: 'icons8-vegetables.svg')
 season = Action.create!(name: "Manger des truc de saisons", span: 2.months, value: 40, category: alimentation, icon: 'icons8-vegetables.svg')
