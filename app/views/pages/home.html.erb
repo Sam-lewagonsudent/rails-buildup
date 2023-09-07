@@ -45,14 +45,13 @@
 
 </div>
 
-
-
   <div class="container">
-    <div class="row ">
+    <div class="row mb-3">
+      <div class="scrolling-wrapper">
         <% sorted_user_challenges = @user_challenges.reject { |uc| uc.done }.sort_by { |uc| [uc.action.category.title, uc.action.name] } %>
         <% current_category = nil %>
           <% sorted_user_challenges.each do |user_challenge| %>
-      <div class="col-3 cards-action-index">
+      <div class="col-6 cards-action-index">
           <div class="home-card" style="border: 3px solid <%= user_challenge.action.category.category_color %>" >
 
             <div class="custom-card-title" style="background-color: <%= user_challenge.action.category.category_color %>">
@@ -70,11 +69,10 @@
               <% end %>
           </div>
       </div>
-
       <% end %>
+      </div>
     </div>
   </div>
-
 
   <div class="container ">
     <button class="btn border-top text-start d-flex justify-content-around " type="button" data-bs-toggle="collapse" data-bs-target="#collapseHome" aria-expanded="false" aria-controls="collapseHome">
