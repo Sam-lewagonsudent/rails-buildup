@@ -5,7 +5,7 @@ class Category < ApplicationRecord
 
   validates :title, presence: true
 
-  COLORS = ["#3E363F", "#579852", "#DD403A",  "#F5CB5C", "#BF98A0"]
+  COLORS = ["#146FA3", "#579852", "#DD403A",  "#F5CB5C", "#471d5e"]
 
 
   def self.ranked_by_total_value
