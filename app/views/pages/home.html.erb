@@ -21,14 +21,14 @@
           <h2 class="mr-3">Salut, <%= current_user.user_name %>!</h2>
 
           <% if current_user.selected_icon.present? %>
-            <div class="selected-icon">
-              <div class="box-home">
-                <div class="polygon-container">
-                  <%= image_tag("achievements/#{current_user.selected_icon}", alt: "Selected Icon", width: 40, height: 40, class: "img-fluid") %>
+
+              <div class="avatar-list mx-auto">
+                <div class="avatar avatar-x-large-home">
+                  <%= image_tag("achievements/#{current_user.selected_icon}", alt: "Usuário", class: "avatar-image") %>
+                  <img src="" class="avatar-frame anim-hue">
                 </div>
               </div>
 
-            </div>
           </div>
         <% end %>
       </div>
