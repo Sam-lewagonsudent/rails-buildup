@@ -8,9 +8,10 @@
         <div class="col-6 mx-auto">
           <div class="icon-selection">
             <div class="card-body">
-              <div class="box-reward mx-auto">
-                <div class="polygon-container">
-                  <%= image_tag("achievements/#{action.icon}", alt: action.name) %>
+              <div class="avatar-list mx-auto">
+                <div class="avatar avatar-x-large">
+                  <%= image_tag("achievements/#{action.icon}", alt: "Usuário", class:"avatar-image") %>
+                  <img src="" class="avatar-frame anim-hue">
                 </div>
               </div>
               <%= form_for :reward, url: rewards_path do |f| %>
