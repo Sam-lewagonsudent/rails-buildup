@@ -1,7 +1,7 @@
 <!-- app/views/icon_selection/new.html.erb -->
 
 <% if @user.has_completed_actions? %>
-  <h1>Choisi un Badge!</h1>
+  <h1>Choisis un Badge!</h1>
   <div class="row icon-pad">
     <% @actions.each do |action| %>
       <% if @user.achieved_action?(action) %>
@@ -28,6 +28,6 @@
   </div>
 <% else %>
   <h3>Aucune Icone Disponible ❌</h3>
-  <p>Complete plus de challenges pour débloquer un Succès </p>
+  <p>Complète plus de challenges pour débloquer un Succès </p>
   <%= link_to 'retour', achievements_path, class: 'btn btn-outline-dark categories' %>
 <% end %>
