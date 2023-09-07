@@ -1,7 +1,7 @@
 
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon postion-fixed" data-controller="audios">
   <div class="container-fluid">
-    <%= link_to  root_path, class: "navbar-brand" do %>
+    <%= link_to  home_path, class: "navbar-brand" do %>
       <%= image_tag "buildup.png" %>
     <% end %>
 
@@ -16,7 +16,7 @@
             <%= link_to "Profil", profil_path, class: "nav-link fonts-nav"%>
           </li>
           <li class="nav-item active " data-audios-target="elem" data-action='click->audios#playSound'>
-            <%= link_to "Home", root_path, class: "nav-link fonts-nav" %>
+            <%= link_to "Home", home_path, class: "nav-link fonts-nav" %>
           </li>
           <li class="nav-item active " data-audios-target="elem" data-action='click->audios#playSound'>
             <%= link_to "Liste des actions disponible", actions_path, class: "nav-link fonts-nav" %>
@@ -44,7 +44,7 @@
         <%# <a href="#" class="bloc-icon">
             <img src="./home.png" alt="npa">
         </a>%>
-            <%= link_to root_path, class:"bloc-icon" do%>
+            <%= link_to home_path, class:"bloc-icon" do%>
              <%= image_tag "home.png"%>
               <% end %>
 

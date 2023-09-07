@@ -24,7 +24,7 @@ class UserCategoriesController < ApplicationController
       user.user_categories.create(category_id: category_id)
     end
 
-    redirect_to root_path
+    redirect_to home_path
   end
 
   def edit
@@ -43,7 +43,7 @@ class UserCategoriesController < ApplicationController
       current_user.user_categories.create(category_id: category_id)
     end
 
-    redirect_to root_path
+    redirect_to home_path
   end
 
   def destroy

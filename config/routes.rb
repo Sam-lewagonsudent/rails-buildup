@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  root to: "pages#home"
+  root to: "pages#welcome"
+  get 'pages/home', to: 'pages#home', as: 'home'
+  get '/pages/welcome', to: 'pages#welcome', as: 'welcome'
   get '/achievements', to: 'achievements#index', as: 'achievements'
   get '/pages/profile', to: 'pages#profile', as: 'profile'
   get '/pages/profil', to: 'pages#profil', as: 'profil'

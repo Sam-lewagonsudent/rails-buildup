@@ -1,0 +1,21 @@
+<div class="home-profile">
+  <% if current_user.nil? %>
+    <div class="banner" >
+          <div class="row justify-content-center">
+            <p class="welcome-text">
+            </p>
+            <%= image_tag "BuildUp2.png", class:"logo-large" %>
+          </div>
+          <%= link_to "connexion",  new_user_session_path, class:'btn ' %>
+          <%= link_to "inscription", user_session_path, class:'btn ' %>
+    </div>
+  <% else %>
+    <div class="banner" >
+          <div class="row justify-content-center">
+            <p class="welcome-text">
+            </p>
+            <%= image_tag "BuildUp2.png", class:"logo-large" %>
+          </div>
+    </div>
+  <% end %>
+</div>
