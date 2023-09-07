@@ -43,7 +43,7 @@ class UserCategoriesController < ApplicationController
       current_user.user_categories.create(category_id: category_id)
     end
 
-    redirect_to home_path
+    redirect_to actions_path
   end
 
   def destroy
