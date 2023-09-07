@@ -179,3 +179,17 @@
     filter: hue-rotate(360deg);
   }
 }
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  display: flex; /* Add this to make the children flex items */
+}
+
+.col-6 {
+  flex: 0 0 auto; /* Ensure each card doesn't grow or shrink */
+  width: 50%; /* Cards should take up 50% of the container width */
+  box-sizing: border-box; /* Include padding and border in the width calculation */
+  padding: 5px; /* Add padding as needed */
+}
